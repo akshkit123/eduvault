@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm --prefix eduvault-frontend run build",
+  "installCommand": "npm --prefix eduvault-frontend install",
+  "outputDirectory": "eduvault-frontend/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
