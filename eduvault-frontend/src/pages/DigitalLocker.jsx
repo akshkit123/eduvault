@@ -148,8 +148,10 @@ function DigitalLocker() {
       return file;
     }
 
-    return `${API_BASE_URL}${file}`;
+    const cleanPath = file.startsWith("/") ? file : `/${file}`;
+    return `${API_BASE_URL}${cleanPath}`;
   };
+
 
   // =====================================================
   // FORMAT DATE

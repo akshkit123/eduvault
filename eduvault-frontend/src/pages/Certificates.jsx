@@ -29,6 +29,8 @@ import {
   uploadDocument,
 } from "../api/documentApi";
 import { getShareableUrl } from "../utils/qrHelper";
+import { getMediaUrl } from "../api/apiClient";
+
 
 
 function Certificates() {
@@ -568,13 +570,15 @@ function Certificates() {
       return;
     }
 
+    const fullUrl = getMediaUrl(document.file);
 
     window.open(
-      document.file,
+      fullUrl,
       "_blank",
       "noopener,noreferrer"
     );
   };
+
 
 
   // =====================================================

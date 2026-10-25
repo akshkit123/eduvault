@@ -3,6 +3,20 @@ export const API_BASE_URL =
     ? import.meta.env.VITE_API_URL.replace(/\/$/, "")
     : "";
 
+/**
+ * Returns full absolute URL for uploaded media files (such as certificates and documents).
+ * In production on Vercel, ensures relative /media paths point to the Render backend.
+ */
+export const getMediaUrl = (url) => {
+  if (!url) return "";
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    return url;
+  }
+  const cleanPath = url.startsWith("/") ? url : `/${url}`;
+  return `${API_BASE_URL}${cleanPath}`;
+};
+
+
 // =====================================================
 // REFRESH ACCESS TOKEN
 // =====================================================
