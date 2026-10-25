@@ -20,6 +20,8 @@ __pycache__/
 # Build output
 dist/
 build/
+staticfiles/
+*/staticfiles/
 
 # IDE & OS
 .vscode/
