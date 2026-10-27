@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduVault - Mini Project Report (MCA40130)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Inter:wght@400;600;700&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 20mm 15mm 20mm 20mm;
+    }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      line-height: 1.6;
+      color: #111;
+      background: #f4f4f7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .report-sheet {
+      background: #fff;
+      max-width: 210mm;
+      margin: 0 auto 30px auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .formal-border {
+      border: 2px solid #000;
+      padding: 15mm 12mm;
+      min-height: 240mm;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Times New Roman', Times, serif;
+      color: #000;
+      margin-top: 1.2em;
+      margin-bottom: 0.6em;
+    }
+
+    h1 { font-size: 18pt; text-transform: uppercase; font-weight: bold; }
+    h2 { font-size: 15pt; font-weight: bold; border-bottom: 1.5px solid #000; padding-bottom: 4px; }
+    h3 { font-size: 13pt; font-weight: bold; }
+    h4 { font-size: 12pt; font-weight: bold; }
+
+    p {
+      text-align: justify;
+      margin-bottom: 1em;
+      text-indent: 1.5em;
+    }
+
+    .no-indent {
+      text-indent: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5em 0;
+      font-size: 10.5pt;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f4;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    pre, code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
+    }
+
+    pre {
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-left: 4px solid #2b4c7e;
+      padding: 12px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      margin: 1em 0;
+    }
+
+    .diagram-box {
+      border: 1px solid #bbb;
+      background: #fafafc;
+      padding: 15px;
+      margin: 15px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 9.5pt;
+      line-height: 1.4;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .sign-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .sign-box {
+      width: 45%;
+    }
+
+    .print-bar {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 9999;
+      background: #2b4c7e;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-family: sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .report-sheet {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-bar {
+        display: none;
+      }
+      .formal-border {
+        min-height: 250mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar" onclick="window.print()">🖨️ Print to PDF / Spiral Bound</div>
+
+  <!-- ========================================================
+       PAGE 1: FACE PAGE
+  ======================================================== -->
+  <div class="report-sheet page-break">
+    <div class="formal-border">
+      <div>
+        <h1 style="font-size: 21pt; margin-bottom: 5px;">Mini Project Report</h1>
+        <p class="no-indent" style="font-size: 14pt; margin: 0; font-weight: normal; text-align: center;">On</p>
+        <h2 style="font-size: 17pt; margin: 15px 0; border: none; text-align: center; color: #1a2a44;">
+          “EduVault: Digital Locker and Academic Credential Verification Platform”
+        </h2>
+
+        <p class="no-indent" style="font-size: 12pt; margin: 25px 0 10px 0; font-weight: bold; text-align: center;">By</p>
+        <p class="no-indent" style="font-size: 13pt; margin: 5px 0; text-align: center;">
+          <b>Akshay Darji</b> — PRN: <b>1272250311</b><br/>
+          <b>Priyesh Nandanwar</b> — PRN: <b>1272250279</b>
+        </p>
+
+        <p class="no-indent" style="font-size: 12pt; margin: 25px 0 5px 0; text-align: center;">For</p>
+        <p class="no-indent" style="font-size: 15pt; font-weight: bold; margin: 0; text-align: center;">
+          MCA40130 Mini Project<br/>
+          SY MCA (Semester III)<br/>
+          AY 2026-2027
+        </p>
+
+        <p class="no-indent" style="font-size: 12pt; margin: 30px 0 5px 0; text-align: center;">Under The Guidance Of</p>
+        <p class="no-indent" style="font-size: 14pt; font-weight: bold; margin: 0; text-align: center;">
+          Mrs. Sukanya Akolkar
+        </p>
+      </div>
+
+      <div>
+        <p class="no-indent" style="font-size: 11pt; margin: 5px 0; text-align: center;">Submitted To</p>
+        <h3 style="font-size: 14pt; margin: 5px 0; text-align: center;">Dr. Vishwanath Karad<br/>MIT WORLD PEACE UNIVERSITY, PUNE</h3>
+        <p class="no-indent" style="font-size: 11pt; margin: 10px 0 5px 0; text-align: center;">
+          In partial fulfillment of the requirement for the award of Degree of<br/>
+          <b>Master of Computer Applications (MCA)</b>
+        </p>
+        <p class="no-indent" style="font-size: 11pt; margin: 15px 0 0 0; text-align: center;">
+          Submitted Through<br/>
+          <b>School of Computer Science and Engineering</b><br/>
+          <b>Department of Computer Science and Applications</b><br/>
+          MIT-WPU, Pune - 411038
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 2: CERTIFICATE PAGE
+  ======================================================== -->
+  <div class="report-sheet page-break">
+    <div class="formal-border" style="text-align: left; justify-content: space-between;">
+      <div style="text-align: center;">
+        <h3 style="margin: 0; font-size: 13pt;">Dr. Vishwanath Karad MIT WORLD PEACE UNIVERSITY, PUNE</h3>
+        <p class="no-indent" style="margin: 4px 0 0 0; font-size: 11pt; text-align: center;">School of Computer Science and Engineering</p>
+        <h4 style="margin: 4px 0 0 0; font-size: 12pt; text-align: center;">Department of Computer Science and Applications</h4>
+        <h1 style="font-size: 24pt; margin-top: 30px; margin-bottom: 25px; letter-spacing: 2px;">Certificate</h1>
+      </div>
+
+      <div style="font-size: 12pt; line-height: 1.8;">
+        <p style="text-align: justify;">
+          This is to certify that, <b>Akshay Darji</b> (PRN: <b>1272250311</b>) and <b>Priyesh Nandanwar</b> (PRN: <b>1272250279</b>), students of <b>SY MCA, Semester III</b> have completed Mini Project entitled 
+          <b>“EduVault: Digital Locker and Academic Credential Verification Platform”</b> under guidance of <b>Mrs. Sukanya Akolkar</b> in partial fulfilment of requirement for the award of <b>Master of Computer Applications</b> prescribed under <b>Dr. Vishwanath Karad MIT World Peace University, Pune</b>.
+        </p>
+        <p style="text-align: justify;">
+          This project is the record of authentic work carried out by them during the academic year <b>2026-2027</b>.
+        </p>
+      </div>
+
+      <div>
+        <div style="text-align: right; margin-bottom: 60px;">
+          <p class="no-indent" style="font-size: 12pt; font-weight: bold; text-align: right;">
+            Mrs. Sukanya Akolkar<br/>
+            <span style="font-weight: normal; font-size: 11pt;">Internal Guide</span>
+          </p>
+        </div>
+
+        <div class="sign-row" style="margin-top: 0;">
+          <div class="sign-box" style="text-align: left;">
+            <p class="no-indent" style="font-size: 12pt; font-weight: bold; text-align: left;">
+              Dr. P. S. Metkewar<br/>
+              <span style="font-weight: normal; font-size: 11pt;">Program Head - MCA</span>
+            </p>
+          </div>
+          <div class="sign-box" style="text-align: right;">
+            <p class="no-indent" style="font-size: 12pt; font-weight: bold; text-align: right;">
+              Dr. Anuradha S. Kanade<br/>
+              <span style="font-weight: normal; font-size: 11pt;">Program Director</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 3: ACKNOWLEDGEMENT
+  ======================================================== -->
+  <div class="report-sheet page-break">
+    <div class="formal-border" style="text-align: left; justify-content: space-between;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
+          <span style="font-size: 11pt;"><b>Date:</b> 27 / 10 / 2026</span>
+          <span style="font-size: 11pt;"><b>Place:</b> Pune</span>
+        </div>
+        <h1 style="text-align: center; font-size: 22pt; margin-bottom: 25px;">Acknowledgement</h1>
+
+        <p>I wish to express our profound gratitude to all the individuals who supported us throughout the completion of our Mini Project III. This report is a testament to their guidance, patience, and resources.</p>
+
+        <p>We are deeply indebted to our esteemed project guide, <b>Mrs. Sukanya Akolkar</b>, for their invaluable mentorship, direction, and encouragement. Their advice was crucial in defining the scope and methodology of this project.</p>
+
+        <p>We extend our sincere thanks to the Head of the Program, <b>Dr. P. S. Metkewar</b>, and the Program Director, <b>Dr. Anuradha S. Kanade</b>, for providing the necessary facilities, academic framework, and environment conducive to advanced project work and research.</p>
+
+        <p>Our appreciation also goes to all the <b>Faculty Members of the Department of Computer Science and Applications</b> for their comprehensive instruction and expertise, which equipped us with the knowledge foundational to this project.</p>
+
+        <p>We thank our fellow Project Group Members, for their unwavering dedication, collaborative spirit, and commitment to shared goals. This project is a product of our collective effort.</p>
+
+        <p>Finally, we are grateful to our <b>Classmates</b> for their constructive feedback and discussions, which enriched our understanding and helped us refine our approach.</p>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <table>
+          <tr>
+            <th style="width: 20%;">Field</th>
+            <th style="width: 40%;">Member 1</th>
+            <th style="width: 40%;">Member 2</th>
+          </tr>
+          <tr>
+            <td><b>Name:</b></td>
+            <td>Akshay Darji</td>
+            <td>Priyesh Nandanwar</td>
+          </tr>
+          <tr>
+            <td><b>PRN:</b></td>
+            <td>1272250311</td>
+            <td>1272250279</td>
+          </tr>
+          <tr>
+            <td><b>Signature:</b></td>
+            <td style="height: 35px;"></td>
+            <td style="height: 35px;"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 4: DECLARATION
+  ======================================================== -->
+  <div class="report-sheet page-break">
+    <div class="formal-border" style="text-align: left; justify-content: space-between;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
+          <span style="font-size: 11pt;"><b>Date:</b> 27 / 10 / 2026</span>
+          <span style="font-size: 11pt;"><b>Place:</b> Pune</span>
+        </div>
+        <h1 style="text-align: center; font-size: 22pt; margin-bottom: 30px;">Declaration</h1>
+
+        <p>
+          We, <b>Akshay Darji</b> and <b>Priyesh Nandanwar</b>, on behalf of our team hereby declare that this Mini Project report entitled 
+          <b>“EduVault: Digital Locker and Academic Credential Verification Platform”</b> is an authentic record of our own work carried out under the supervision of <b>Mrs. Sukanya Akolkar</b>.
+        </p>
+
+        <p>
+          We further declare that the content of this report, including all design, coding, testing, and analysis, is original and has not been submitted previously for any other degree or diploma at this or any other institution.
+        </p>
+
+        <p>
+          We take sole and full responsibility for any errors, omissions, or misrepresentations found within this report.
+        </p>
+      </div>
+
+      <div style="margin-top: 50px;">
+        <table>
+          <tr>
+            <th style="width: 20%;">Field</th>
+            <th style="width: 40%;">Member 1</th>
+            <th style="width: 40%;">Member 2</th>
+          </tr>
+          <tr>
+            <td><b>Name:</b></td>
+            <td>Akshay Darji</td>
+            <td>Priyesh Nandanwar</td>
+          </tr>
+          <tr>
+            <td><b>PRN:</b></td>
+            <td>1272250311</td>
+            <td>1272250279</td>
+          </tr>
+          <tr>
+            <td><b>Signature:</b></td>
+            <td style="height: 40px;"></td>
+            <td style="height: 40px;"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MAIN BODY OF REPORT
+  ======================================================== -->
+  <div class="report-sheet">
+    
+    <!-- INDEX TABLE -->
+    <h1 style="text-align: center;">Project Report Index</h1>
+    <table>
+      <tr>
+        <th style="width: 12%;">Index</th>
+        <th style="width: 76%;">Section Title</th>
+        <th style="width: 12%;">Page</th>
+      </tr>
+      <tr><td style="text-align: center;"><b>1</b></td><td><b>INTRODUCTION</b></td><td style="text-align: center;">1</td></tr>
+      <tr><td style="text-align: center;">1.1</td><td>EXISTING SYSTEM, PROPOSED SYSTEM AND NEED AND OBJECTIVE OF SYSTEM</td><td style="text-align: center;">1</td></tr>
+      <tr><td style="text-align: center;">1.2</td><td>SCOPE OF WORK</td><td style="text-align: center;">3</td></tr>
+      <tr><td style="text-align: center;">1.3</td><td>OPERATING ENVIRONMENT – HARDWARE AND SOFTWARE</td><td style="text-align: center;">4</td></tr>
+      <tr><td style="text-align: center;">1.4</td><td>DESCRIPTION OF TECHNOLOGY USED</td><td style="text-align: center;">5</td></tr>
+      <tr><td style="text-align: center;"><b>2</b></td><td><b>PROPOSED SYSTEM</b></td><td style="text-align: center;">7</td></tr>
+      <tr><td style="text-align: center;">2.1</td><td>FEASIBILITY STUDY</td><td style="text-align: center;">7</td></tr>
+      <tr><td style="text-align: center;">2.2</td><td>USER REQUIREMENTS</td><td style="text-align: center;">9</td></tr>
+      <tr><td style="text-align: center;"><b>3</b></td><td><b>ANALYSIS AND DESIGN (If Applicable)</b></td><td style="text-align: center;">11</td></tr>
+      <tr><td style="text-align: center;">3.1</td><td>OBJECT DIAGRAM</td><td style="text-align: center;">11</td></tr>
+      <tr><td style="text-align: center;">3.2</td><td>CLASS DIAGRAM</td><td style="text-align: center;">12</td></tr>
+      <tr><td style="text-align: center;">3.3</td><td>USE CASE DIAGRAM</td><td style="text-align: center;">14</td></tr>
+      <tr><td style="text-align: center;">3.4</td><td>SEQUENCE DIAGRAM</td><td style="text-align: center;">15</td></tr>
+      <tr><td style="text-align: center;">3.5</td><td>ACTIVITY DIAGRAM</td><td style="text-align: center;">17</td></tr>
+      <tr><td style="text-align: center;">3.6</td><td>MODULE HIERARCHY DIAGRAM</td><td style="text-align: center;">18</td></tr>
+      <tr><td style="text-align: center;">3.7</td><td>USER INTERFACE DESIGN (SCREENS ETC.)</td><td style="text-align: center;">19</td></tr>
+      <tr><td style="text-align: center;">3.8</td><td>TABLE SPECIFICATIONS</td><td style="text-align: center;">21</td></tr>
+      <tr><td style="text-align: center;"><b>4</b></td><td><b>INPUT AND OUTPUT SCREENS</b></td><td style="text-align: center;">24</td></tr>
+      <tr><td style="text-align: center;"><b>5</b></td><td><b>TEST PROCEDURES AND IMPLEMENTATION</b></td><td style="text-align: center;">28</td></tr>
+      <tr><td style="text-align: center;"><b>6</b></td><td><b>SAMPLE CODE</b></td><td style="text-align: center;">32</td></tr>
+      <tr><td style="text-align: center;"><b>7</b></td><td><b>LIMITATIONS</b></td><td style="text-align: center;">36</td></tr>
+      <tr><td style="text-align: center;"><b>8</b></td><td><b>FUTURE SCOPE</b></td><td style="text-align: center;">37</td></tr>
+      <tr><td style="text-align: center;"><b>9</b></td><td><b>CONCLUSION</b></td><td style="text-align: center;">38</td></tr>
+      <tr><td style="text-align: center;"><b>10</b></td><td><b>REFERENCES</b></td><td style="text-align: center;">39</td></tr>
+    </table>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 1. INTRODUCTION -->
+    <h2>1. INTRODUCTION</h2>
+    
+    <h3>1.1 Existing System, Proposed System and Need and Objective of System</h3>
+    <p><b>Existing System:</b> Traditional academic credential management in higher education institutes heavily depends on physical paper documents or unauthenticated PDF files. In this manual model, students submit physical photocopies for placement eligibility and administrative checks. Academic verification committees manually inspect and stamp records, leading to severe administrative overhead, multi-week delays for corporate background checks, and an inherent vulnerability to resume fraud and document alteration.</p>
+
+    <p><b>Proposed System (EduVault):</b> EduVault is an enterprise-grade Digital Locker and Academic Credential Verification platform. It provides a secure, role-governed ecosystem supporting four primary user roles: <i>Student</i>, <i>Alumni</i>, <i>Academic Committee</i>, and <i>Placement Team</i>. Students securely upload marksheets, certificates, internships, and technical projects. The Academic Committee reviews and verifies credentials in real-time. Placement officers leverage verified student dossiers with dynamic CGPA and departmental filtering. Every candidate receives a cryptographic <b>Interview Key</b> that compiles into an instant QR Code for on-the-spot mobile verification by recruiters.</p>
+
+    <p><b>Need of the System:</b> There is a critical institutional need to eradicate academic fraud, streamline campus placement drives, and offer students lifelong cloud-native access to authenticated academic credentials. EduVault provides an immutable, transparent single source of truth for students, recruiters, and administrators.</p>
+
+    <p><b>Objectives of the System:</b></p>
+    <ul>
+      <li>Implement a high-speed, secure RESTful API using Django REST Framework and PostgreSQL.</li>
+      <li>Deliver an intuitive, responsive frontend using React 18, Vite, and Tailwind CSS.</li>
+      <li>Establish strict Role-Based Access Control (RBAC) across 4 roles.</li>
+      <li>Integrate dynamic QR Code generation for instant physical and digital interview verification.</li>
+      <li>Deploy the entire full-stack platform to 100% free production cloud tiers (Vercel, Render, and Neon).</li>
+    </ul>
+
+    <h3>1.2 Scope of Work</h3>
+    <p>The scope of EduVault covers user authentication with JWT, digital document storage with MIME-type and size validators, an academic committee approval/rejection pipeline with candidate feedback, a placement candidate discovery portal, a dynamic alumni directory with mentorship status, and public endpoints for QR-based dossier verification.</p>
+
+    <h3>1.3 Operating Environment – Hardware and Software</h3>
+    <p><b>Hardware Requirements:</b> Dual-core 2.0 GHz processor or higher, 8 GB RAM (16 GB recommended), 500 MB storage. Compatible with standard desktop browsers and modern Android/iOS mobile cameras.</p>
+    <p><b>Software Requirements:</b> Windows 11 / Ubuntu 22.04 LTS, Python 3.11, Node.js v20, Django 6.0, Django REST Framework, React 18, Vite, PostgreSQL 16 (Neon Serverless), WhiteNoise, and Gunicorn.</p>
+
+    <h3>1.4 Description of Technology Used</h3>
+    <p><b>React 18 & Vite:</b> High-performance reactive UI rendering with instantaneous hot module reloading and fast client bundle compilation.</p>
+    <p><b>Tailwind CSS:</b> Modern utility-first CSS styling enabling responsive layouts, micro-animations, and clean typography without heavy style dependencies.</p>
+    <p><b>Django & Django REST Framework:</b> Robust Python backend framework providing built-in ORM security against SQL injections, CSRF protection, and high-throughput serialization.</p>
+    <p><b>Neon PostgreSQL 16:</b> Cloud-native serverless PostgreSQL providing full ACID compliance, foreign key integrity, and zero-maintenance storage.</p>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 2. PROPOSED SYSTEM -->
+    <h2>2. PROPOSED SYSTEM</h2>
+    
+    <h3>2.1 Feasibility Study</h3>
+    <p><b>Operational Feasibility:</b> The interface eliminates manual paperwork. Students can upload records in seconds; committee members review them with single-click approvals; placement officers filter candidates instantly. The system is operationally feasible and requires zero special training.</p>
+    <p><b>Technical Feasibility:</b> Built using proven, robust technologies (Python, Django, React, PostgreSQL) backed by extensive documentation and active developer communities. The system is technically sound.</p>
+    <p><b>Economic Feasibility:</b> EduVault utilizes 100% open-source software and is hosted on zero-cost production cloud infrastructure (Vercel, Render, and Neon), resulting in zero software licensing or operational hosting costs.</p>
+
+    <h3>2.2 User Requirements</h3>
+    <p><b>Functional Requirements:</b> Secure registration & JWT login; role-based dashboard redirection; document uploading (PDF/JPG/PNG <= 5MB); committee verification & rejection with feedback; placement search with CGPA filtering; dynamic alumni registry; QR code public dossier generation.</p>
+    <p><b>Non-Functional Requirements:</b> Sub-300ms API response time; HTTPS encrypted communication; PBKDF2 password hashing with SHA-256; WCAG-compliant responsive design; persistent cloud database integrity.</p>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 3. ANALYSIS AND DESIGN -->
+    <h2>3. ANALYSIS AND DESIGN</h2>
+
+    <h3>3.1 Object Diagram</h3>
+    <div class="diagram-box">
+[akshayUser: User]
+  - id: 14
+  - email: "ak12@gmail.com"
+  - role: "STUDENT"
+         |
+         | (owns)
+         v
+[akshayProfile: StudentProfile]
+  - prn: "1272250311"
+  - department: "Computer Science"
+  - cgpa: 9.20
+         |
+         | (uploads)
+         v
+[degreeDoc: Document] <-------- (verifies) -------- [committeeUser: User]
+  - id: 42                                           - id: 3
+  - title: "Degree Certificate"                      - role: "COMMITTEE"
+  - status: "VERIFIED"
+  - verification_id: "f47ac10b..."
+    </div>
+
+    <h3>3.2 Class Diagram</h3>
+    <div class="diagram-box">
++------------------------+          1:1          +--------------------------+
+|         User           |---------------------->|      StudentProfile      |
++------------------------+                       +--------------------------+
+| - id: int              |                       | - id: int                |
+| - email: string        |                       | - prn: string            |
+| - role: string         |                       | - cgpa: float            |
+| - college: string      |                       | - batch: string          |
+| - department: string   |                       | - current_company: string|
++------------------------+                       +--------------------------+
+            | 1:*
+            |
+            v
++------------------------+
+|       Document         |
++------------------------+
+| - id: int              |
+| - verification_id: uuid|
+| - title: string        |
+| - category: string     |
+| - file: FileField      |
+| - status: string       |
+| - rejection_reason: str|
++------------------------+
+    </div>
+
+    <h3>3.3 Use Case Diagram</h3>
+    <p class="no-indent"><b>Primary Actors:</b> Student, Alumni, Committee Member, Placement Officer, Public Recruiter.<br/>
+    <b>Core Use Cases:</b> Register & Login, Manage Profile, Upload/Delete Documents, Generate Interview Key QR, Review Pending Queue, Verify/Reject Document, Filter Candidates by CGPA, Browse Alumni Network, Scan QR & Verify Dossier.</p>
+
+    <h3>3.4 Sequence Diagram (Document Verification & Recruitment Flow)</h3>
+    <div class="diagram-box">
+Student -> ReactUI: Uploads Degree Certificate (PDF)
+ReactUI -> DjangoAPI: POST /api/documents/ (multipart + JWT)
+DjangoAPI -> NeonDB: INSERT INTO documents (status="PENDING")
+DjangoAPI -> ReactUI: 201 Created (Badge: PENDING)
+
+Committee -> ReactUI: Opens Verification Queue
+ReactUI -> DjangoAPI: GET /api/committee/documents/?status=PENDING
+Committee -> ReactUI: Clicks "Verify Document"
+ReactUI -> DjangoAPI: POST /api/committee/documents/{id}/verify/
+DjangoAPI -> NeonDB: UPDATE documents SET status="VERIFIED"
+DjangoAPI -> ReactUI: 200 OK (Badge: VERIFIED)
+
+Recruiter -> PhoneCamera: Scans Student's Interview Key QR Code
+PhoneCamera -> ReactUI: Opens /student/14
+ReactUI -> DjangoAPI: GET /api/profile/public/student/14/
+DjangoAPI -> ReactUI: Returns Verified Dossier with Approved Documents
+ReactUI -> Recruiter: Displays Authenticated Candidate Credentials
+    </div>
+
+    <h3>3.5 Activity Diagram</h3>
+    <p>User logs in &rarr; Selects document & category &rarr; Validates size & extension &rarr; Submits to Django REST API &rarr; Backend saves record with status <i>PENDING</i> &rarr; Document enters Committee Queue &rarr; Committee inspects file &rarr; If approved: status updated to <i>VERIFIED</i> with timestamp; If rejected: status updated to <i>REJECTED</i> with feedback dispatched to student &rarr; Verified documents compile into student's public Interview Key.</p>
+
+    <h3>3.6 Module Hierarchy Diagram</h3>
+    <p><b>EduVault Platform</b> decomposed into: (1) Authentication & RBAC Module, (2) Student Digital Vault Module, (3) Academic Committee Verification Module, (4) Placement Talent Pool Module, (5) Dynamic Alumni Directory Module, and (6) Public Verification Gateway.</p>
+
+    <h3>3.7 User Interface Design (Screens etc.)</h3>
+    <p>Consists of 8 responsive screens: User Login, User Registration, Student Digital Locker, Interview Key QR Modal, Academic Committee Review Queue, Campus Placement Talent Pool, Dynamic Alumni Directory, and Public Verified Candidate Dossier.</p>
+
+    <h3>3.8 Table Specifications</h3>
+    <p class="no-indent"><b>Table 1: accounts_user</b> &mdash; Columns: <code>id</code> (PK), <code>email</code> (Unique), <code>password</code> (Hash), <code>role</code> (STUDENT, ALUMNI, COMMITTEE, PLACEMENT), <code>college</code>, <code>department</code>, <code>is_active</code>, <code>date_joined</code>.</p>
+    <p class="no-indent"><b>Table 2: students_studentprofile</b> &mdash; Columns: <code>id</code> (PK), <code>user_id</code> (FK 1:1), <code>prn</code>, <code>cgpa</code>, <code>batch</code>, <code>skills</code>, <code>current_company</code>, <code>current_role</code>, <code>is_mentor_available</code>.</p>
+    <p class="no-indent"><b>Table 3: documents_document</b> &mdash; Columns: <code>id</code> (PK), <code>verification_id</code> (UUID), <code>user_id</code> (FK), <code>title</code>, <code>category</code>, <code>file</code>, <code>status</code> (PENDING, VERIFIED, REJECTED), <code>rejection_reason</code>, <code>verified_at</code>.</p>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 4. INPUT AND OUTPUT SCREENS -->
+    <h2>4. INPUT AND OUTPUT SCREENS</h2>
+    <p>Detailed documentation of all system screens, input fields, button interactions, visual indicators, and feedback messages across the 4 user portals.</p>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 5. TEST PROCEDURES AND IMPLEMENTATION -->
+    <h2>5. TEST PROCEDURES AND IMPLEMENTATION</h2>
+    <table>
+      <tr>
+        <th>Test ID</th>
+        <th>Scenario</th>
+        <th>Input</th>
+        <th>Expected Result</th>
+        <th>Status</th>
+      </tr>
+      <tr><td>TC-01</td><td>User Registration</td><td>Akshay Darji, ak12@gmail.com, STUDENT</td><td>User created, 201 Created</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-02</td><td>Duplicate Email Reg</td><td>ak12@gmail.com (duplicate)</td><td>HTTP 400 Bad Request</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-03</td><td>User Login</td><td>Valid Email & Password</td><td>Return JWT Access & Refresh</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-04</td><td>Document Upload Valid</td><td>marksheet.pdf (1.8 MB), MARKSHEET</td><td>Saved with status PENDING</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-05</td><td>Oversized Upload</td><td>file > 5 MB</td><td>HTTP 400 File size error</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-06</td><td>Role Access Guard</td><td>Student accessing Committee API</td><td>HTTP 403 Forbidden</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-07</td><td>Committee Approval</td><td>Document ID: 42 clicked Verify</td><td>Status updated to VERIFIED</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-08</td><td>Placement CGPA Filter</td><td>CGPA >= 8.0</td><td>Filtered candidate pool</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-09</td><td>Mobile QR Scan</td><td>Phone camera scans /student/14</td><td>Opens public dossier on phone</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-10</td><td>Production Media View</td><td>Click "View File"</td><td>Opens file from Render backend</td><td><b>PASS</b></td></tr>
+    </table>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 6. SAMPLE CODE -->
+    <h2>6. SAMPLE CODE</h2>
+    <p class="no-indent"><b>Custom User Model (`accounts/models.py`):</b></p>
+    <pre>class User(AbstractUser):
+    class Role(models.TextChoices):
+        STUDENT = "STUDENT", "Student"
+        ALUMNI = "ALUMNI", "Alumni"
+        COMMITTEE = "COMMITTEE", "Committee Member"
+        PLACEMENT = "PLACEMENT", "Placement Team"
+
+    username = None
+    email = models.EmailField(unique=True)
+    role = models.CharField(max_length=20, choices=Role.choices, default=Role.STUDENT)
+    college = models.CharField(max_length=255, default="MIT-WPU")
+    department = models.CharField(max_length=100, default="Computer Science")
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["first_name", "last_name"]</pre>
+
+    <p class="no-indent"><b>Committee Verification API View (`documents/views.py`):</b></p>
+    <pre>class VerifyDocumentView(APIView):
+    permission_classes = [IsCommittee]
+
+    def post(self, request, pk):
+        document = get_object_or_404(Document, pk=pk)
+        document.status = Document.Status.VERIFIED
+        document.verified_at = timezone.now()
+        document.rejection_reason = None
+        document.save()
+        return Response({"message": "Document verified successfully.", "status": "VERIFIED"})</pre>
+
+    <p class="no-indent"><b>Frontend Dynamic Media Resolver (`src/api/apiClient.js`):</b></p>
+    <pre>export const API_BASE_URL = typeof import.meta !== "undefined" && import.meta.env?.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace(/\/$/, "") : "";
+
+export const getMediaUrl = (url) => {
+  if (!url) return "";
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  const cleanPath = url.startsWith("/") ? url : `/${url}`;
+  return `${API_BASE_URL}${cleanPath}`;
+};</pre>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 7. LIMITATIONS & 8. FUTURE SCOPE -->
+    <h2>7. LIMITATIONS</h2>
+    <p>1. Render free-tier cold starts (30-50s spin up after 15 min idle).<br/>
+    2. Ephemeral disk on free container restarts (persistent PostgreSQL, temporary media).<br/>
+    3. Manual committee verification without automated OCR verification.<br/>
+    4. Offline mode not currently available (requires active internet).</p>
+
+    <h2>8. FUTURE SCOPE</h2>
+    <p>1. Blockchain-anchored cryptographic certificate hashes on Ethereum / Polygon.<br/>
+    2. Integration with persistent AWS S3 or Cloudinary storage.<br/>
+    3. AI-powered OCR for automatic verification against university ERP databases.<br/>
+    4. Government DigiLocker and National Academic Depository (NAD) API integrations.<br/>
+    5. Native mobile applications built with React Native.</p>
+
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
+
+    <!-- 9. CONCLUSION & 10. REFERENCES -->
+    <h2>9. CONCLUSION</h2>
+    <p>EduVault successfully modernizes academic credential handling, eliminates document fraud, simplifies administrative review, and bridges the gap between students, recruiters, and alumni. Built on Django REST Framework, React 18, Vite, and PostgreSQL, the platform is fully responsive, production-tested, and deployed on cloud infrastructure.</p>
+
+    <h2>10. REFERENCES</h2>
+    <ol style="padding-left: 20px;">
+      <li>Daniel Roy Greenfeld & Audrey Roy Greenfeld, <i>Two Scoops of Django 3.x</i>.</li>
+      <li>Alex Banks & Eve Porcello, <i>Learning React (2nd Edition)</i>, O'Reilly Media.</li>
+      <li>Django Software Foundation, <i>Django 6.0 Documentation</i>, 2026.</li>
+      <li>Django REST Framework Official Guide, <i>https://www.django-rest-framework.org/</i>.</li>
+      <li>React.js Documentation, <i>https://react.dev/</i>.</li>
+      <li>Vite Documentation, <i>https://vite.dev/</i>.</li>
+      <li>Tailwind CSS Guide, <i>https://tailwindcss.com/docs</i>.</li>
+      <li>PostgreSQL Global Development Group, <i>PostgreSQL 16 Manual</i>, 2026.</li>
+    </ol>
+  </div>
+
+</body>
+</html>
