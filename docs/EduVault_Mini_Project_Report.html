@@ -3,74 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduVault: Digital Locker | Mini Project Report</title>
+  <title>EduVault - Mini Project Report (MCA40130)</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Courier+Prime:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Inter:wght@400;600;700&display=swap');
 
     @page {
       size: A4 portrait;
       margin: 20mm 15mm 20mm 20mm;
-      @top-right {
-        content: "EduVault: Digital Locker | Mini Project Report";
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 9pt;
-        font-style: italic;
-      }
-      @bottom-center {
-        content: "Page " counter(page);
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 10pt;
-      }
-    }
-
-    * {
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'Times New Roman', Times, serif;
-      font-size: 11.5pt;
-      line-height: 1.55;
+      font-size: 12pt;
+      line-height: 1.6;
       color: #111;
-      background: #eef0f3;
+      background: #f4f4f7;
       margin: 0;
-      padding: 25px 0;
+      padding: 20px;
     }
 
-    .page {
-      background: #ffffff;
-      width: 210mm;
-      min-height: 297mm;
-      margin: 0 auto 25px auto;
-      padding: 20mm 18mm 22mm 22mm;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    .report-sheet {
+      background: #fff;
+      max-width: 210mm;
+      margin: 0 auto 30px auto;
+      padding: 25mm 20mm;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-sizing: border-box;
       position: relative;
-    }
-
-    .page-header {
-      text-align: right;
-      font-size: 9pt;
-      font-style: italic;
-      color: #333;
-      border-bottom: 0.5px solid #bbb;
-      padding-bottom: 4px;
-      margin-bottom: 22px;
-    }
-
-    .page-footer {
-      position: absolute;
-      bottom: 12mm;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: 10pt;
-      color: #222;
     }
 
     .formal-border {
       border: 2px solid #000;
-      padding: 14mm 10mm;
-      min-height: 255mm;
+      padding: 15mm 12mm;
+      min-height: 240mm;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -85,211 +51,136 @@
     h1, h2, h3, h4 {
       font-family: 'Times New Roman', Times, serif;
       color: #000;
-      margin-top: 1.1em;
-      margin-bottom: 0.5em;
+      margin-top: 1.2em;
+      margin-bottom: 0.6em;
     }
 
-    h1.chapter-title {
-      font-size: 18pt;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 18px;
-    }
-
-    h2.section-title {
-      font-size: 13.5pt;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-top: 22px;
-      margin-bottom: 8px;
-    }
-
-    h3.subsection-title {
-      font-size: 12pt;
-      font-weight: bold;
-      margin-top: 14px;
-      margin-bottom: 6px;
-    }
-
-    h4.subsubsection-title {
-      font-size: 11.5pt;
-      font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 4px;
-    }
+    h1 { font-size: 18pt; text-transform: uppercase; font-weight: bold; }
+    h2 { font-size: 15pt; font-weight: bold; border-bottom: 1.5px solid #000; padding-bottom: 4px; }
+    h3 { font-size: 13pt; font-weight: bold; }
+    h4 { font-size: 12pt; font-weight: bold; }
 
     p {
       text-align: justify;
-      margin-top: 0;
-      margin-bottom: 0.85em;
+      margin-bottom: 1em;
       text-indent: 1.5em;
     }
 
-    p.no-indent {
+    .no-indent {
       text-indent: 0;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 14px 0 18px 0;
-      font-size: 9.5pt;
-      line-height: 1.4;
+      margin: 1.5em 0;
+      font-size: 10.5pt;
     }
 
     th, td {
       border: 1px solid #333;
-      padding: 6px 8px;
+      padding: 8px 10px;
       text-align: left;
-      vertical-align: top;
     }
 
     th {
-      background-color: #f7f7f9;
+      background-color: #f0f0f4;
       font-weight: bold;
       text-align: center;
-    }
-
-    .table-caption {
-      font-size: 9.5pt;
-      font-style: italic;
-      font-weight: bold;
-      margin-top: 12px;
-      margin-bottom: 4px;
-      text-align: center;
-    }
-
-    .figure-caption {
-      font-size: 9.5pt;
-      font-style: italic;
-      text-align: center;
-      margin-top: 8px;
-      margin-bottom: 16px;
     }
 
     pre, code {
-      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
-      font-size: 8.5pt;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
     }
 
     pre {
-      background: #fbfbfb;
-      border: 1px solid #ccc;
-      padding: 10px;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-left: 4px solid #2b4c7e;
+      padding: 12px;
       overflow-x: auto;
-      white-space: pre;
-      line-height: 1.35;
-      margin: 10px 0 14px 0;
+      white-space: pre-wrap;
+      margin: 1em 0;
     }
 
-    .wireframe-box {
-      border: 1px solid #999;
-      background: #fcfcfc;
-      padding: 8px;
-      font-family: 'Courier Prime', monospace;
-      font-size: 8pt;
-      line-height: 1.25;
+    .diagram-box {
+      border: 1px solid #bbb;
+      background: #fafafc;
+      padding: 15px;
+      margin: 15px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 9.5pt;
+      line-height: 1.4;
       white-space: pre;
       overflow-x: auto;
-      margin: 10px 0 14px 0;
     }
 
-    /* Dotted Table of Contents */
-    .toc-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 10.5pt;
+    .sign-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      text-align: center;
     }
 
-    .toc-table tr td {
-      border: none;
-      padding: 3.5px 0;
+    .sign-box {
+      width: 45%;
     }
 
-    .toc-table .toc-num {
-      width: 10%;
-      font-weight: bold;
-      vertical-align: bottom;
-    }
-
-    .toc-table .toc-title {
-      width: 82%;
-      vertical-align: bottom;
-    }
-
-    .toc-table .toc-dots {
-      border-bottom: 1px dotted #555;
-      height: 1em;
-      display: inline-block;
-      width: 100%;
-    }
-
-    .toc-table .toc-page {
-      width: 8%;
-      text-align: right;
-      vertical-align: bottom;
-      font-weight: bold;
-    }
-
-    .print-btn {
+    .print-bar {
       position: fixed;
-      top: 18px;
-      right: 25px;
-      z-index: 10000;
-      background: #1a365d;
+      top: 15px;
+      right: 15px;
+      z-index: 9999;
+      background: #2b4c7e;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       font-family: sans-serif;
-      font-weight: bold;
       font-size: 13px;
+      font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      border: none;
-    }
-
-    .print-btn:hover {
-      background: #2b6cb0;
     }
 
     @media print {
       body {
-        background: none;
+        background: transparent;
         padding: 0;
       }
-      .page {
+      .report-sheet {
         box-shadow: none;
         margin: 0;
-        width: 100%;
-        min-height: 100vh;
-        padding: 15mm 15mm 15mm 15mm;
+        padding: 0;
+        max-width: 100%;
       }
-      .print-btn {
+      .print-bar {
         display: none;
+      }
+      .formal-border {
+        min-height: 250mm;
       }
     }
   </style>
 </head>
 <body>
 
-  <button class="print-btn" onclick="window.print()">🖨️ Print Report (Save as PDF)</button>
+  <div class="print-bar" onclick="window.print()">🖨️ Print to PDF / Spiral Bound</div>
 
   <!-- ========================================================
-       FRONT MATTER - PAGE 1: FACE PAGE
+       PAGE 1: FACE PAGE
   ======================================================== -->
-  <div class="page page-break">
+  <div class="report-sheet page-break">
     <div class="formal-border">
       <div>
-        <h1 style="font-size: 20pt; margin-bottom: 6px;">Mini Project Report</h1>
-        <p class="no-indent" style="font-size: 13pt; margin: 0; font-weight: normal; text-align: center;">On</p>
-        <h2 style="font-size: 17pt; margin: 16px 0; border: none; text-align: center; color: #1a2a44;">
+        <h1 style="font-size: 21pt; margin-bottom: 5px;">Mini Project Report</h1>
+        <p class="no-indent" style="font-size: 14pt; margin: 0; font-weight: normal; text-align: center;">On</p>
+        <h2 style="font-size: 17pt; margin: 15px 0; border: none; text-align: center; color: #1a2a44;">
           “EduVault: Digital Locker and Academic Credential Verification Platform”
         </h2>
 
         <p class="no-indent" style="font-size: 12pt; margin: 25px 0 10px 0; font-weight: bold; text-align: center;">By</p>
-        <p class="no-indent" style="font-size: 13pt; margin: 4px 0; text-align: center;">
+        <p class="no-indent" style="font-size: 13pt; margin: 5px 0; text-align: center;">
           <b>Akshay Darji</b> — PRN: <b>1272250311</b><br/>
           <b>Priyesh Nandanwar</b> — PRN: <b>1272250279</b>
         </p>
@@ -301,7 +192,7 @@
           AY 2026-2027
         </p>
 
-        <p class="no-indent" style="font-size: 12pt; margin: 28px 0 5px 0; text-align: center;">Under The Guidance Of</p>
+        <p class="no-indent" style="font-size: 12pt; margin: 30px 0 5px 0; text-align: center;">Under The Guidance Of</p>
         <p class="no-indent" style="font-size: 14pt; font-weight: bold; margin: 0; text-align: center;">
           Mrs. Sukanya Akolkar
         </p>
@@ -310,11 +201,11 @@
       <div>
         <p class="no-indent" style="font-size: 11pt; margin: 5px 0; text-align: center;">Submitted To</p>
         <h3 style="font-size: 14pt; margin: 5px 0; text-align: center;">Dr. Vishwanath Karad<br/>MIT WORLD PEACE UNIVERSITY, PUNE</h3>
-        <p class="no-indent" style="font-size: 11pt; margin: 8px 0 4px 0; text-align: center;">
+        <p class="no-indent" style="font-size: 11pt; margin: 10px 0 5px 0; text-align: center;">
           In partial fulfillment of the requirement for the award of Degree of<br/>
           <b>Master of Computer Applications (MCA)</b>
         </p>
-        <p class="no-indent" style="font-size: 11pt; margin: 12px 0 0 0; text-align: center;">
+        <p class="no-indent" style="font-size: 11pt; margin: 15px 0 0 0; text-align: center;">
           Submitted Through<br/>
           <b>School of Computer Science and Engineering</b><br/>
           <b>Department of Computer Science and Applications</b><br/>
@@ -325,18 +216,18 @@
   </div>
 
   <!-- ========================================================
-       FRONT MATTER - PAGE 2: CERTIFICATE PAGE
+       PAGE 2: CERTIFICATE PAGE
   ======================================================== -->
-  <div class="page page-break">
+  <div class="report-sheet page-break">
     <div class="formal-border" style="text-align: left; justify-content: space-between;">
       <div style="text-align: center;">
         <h3 style="margin: 0; font-size: 13pt;">Dr. Vishwanath Karad MIT WORLD PEACE UNIVERSITY, PUNE</h3>
         <p class="no-indent" style="margin: 4px 0 0 0; font-size: 11pt; text-align: center;">School of Computer Science and Engineering</p>
         <h4 style="margin: 4px 0 0 0; font-size: 12pt; text-align: center;">Department of Computer Science and Applications</h4>
-        <h1 style="font-size: 24pt; margin-top: 25px; margin-bottom: 20px; letter-spacing: 2px;">Certificate</h1>
+        <h1 style="font-size: 24pt; margin-top: 30px; margin-bottom: 25px; letter-spacing: 2px;">Certificate</h1>
       </div>
 
-      <div style="font-size: 12pt; line-height: 1.85;">
+      <div style="font-size: 12pt; line-height: 1.8;">
         <p style="text-align: justify;">
           This is to certify that, <b>Akshay Darji</b> (PRN: <b>1272250311</b>) and <b>Priyesh Nandanwar</b> (PRN: <b>1272250279</b>), students of <b>SY MCA, Semester III</b> have completed Mini Project entitled 
           <b>“EduVault: Digital Locker and Academic Credential Verification Platform”</b> under guidance of <b>Mrs. Sukanya Akolkar</b> in partial fulfilment of requirement for the award of <b>Master of Computer Applications</b> prescribed under <b>Dr. Vishwanath Karad MIT World Peace University, Pune</b>.
@@ -347,21 +238,21 @@
       </div>
 
       <div>
-        <div style="text-align: right; margin-bottom: 50px;">
+        <div style="text-align: right; margin-bottom: 60px;">
           <p class="no-indent" style="font-size: 12pt; font-weight: bold; text-align: right;">
             Mrs. Sukanya Akolkar<br/>
             <span style="font-weight: normal; font-size: 11pt;">Internal Guide</span>
           </p>
         </div>
 
-        <div style="display: flex; justify-content: space-between;">
-          <div style="width: 48%; text-align: left;">
+        <div class="sign-row" style="margin-top: 0;">
+          <div class="sign-box" style="text-align: left;">
             <p class="no-indent" style="font-size: 12pt; font-weight: bold; text-align: left;">
               Dr. P. S. Metkewar<br/>
               <span style="font-weight: normal; font-size: 11pt;">Program Head - MCA</span>
             </p>
           </div>
-          <div style="width: 48%; text-align: right;">
+          <div class="sign-box" style="text-align: right;">
             <p class="no-indent" style="font-size: 12pt; font-weight: bold; text-align: right;">
               Dr. Anuradha S. Kanade<br/>
               <span style="font-weight: normal; font-size: 11pt;">Program Director</span>
@@ -373,16 +264,16 @@
   </div>
 
   <!-- ========================================================
-       FRONT MATTER - PAGE 3: ACKNOWLEDGEMENT
+       PAGE 3: ACKNOWLEDGEMENT
   ======================================================== -->
-  <div class="page page-break">
+  <div class="report-sheet page-break">
     <div class="formal-border" style="text-align: left; justify-content: space-between;">
       <div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
           <span style="font-size: 11pt;"><b>Date:</b> 27 / 10 / 2026</span>
           <span style="font-size: 11pt;"><b>Place:</b> Pune</span>
         </div>
-        <h1 style="text-align: center; font-size: 22pt; margin-bottom: 22px;">Acknowledgement</h1>
+        <h1 style="text-align: center; font-size: 22pt; margin-bottom: 25px;">Acknowledgement</h1>
 
         <p>I wish to express our profound gratitude to all the individuals who supported us throughout the completion of our Mini Project III. This report is a testament to their guidance, patience, and resources.</p>
 
@@ -397,7 +288,7 @@
         <p>Finally, we are grateful to our <b>Classmates</b> for their constructive feedback and discussions, which enriched our understanding and helped us refine our approach.</p>
       </div>
 
-      <div style="margin-top: 35px;">
+      <div style="margin-top: 40px;">
         <table>
           <tr>
             <th style="width: 20%;">Field</th>
@@ -416,8 +307,8 @@
           </tr>
           <tr>
             <td><b>Signature:</b></td>
-            <td style="height: 38px;"></td>
-            <td style="height: 38px;"></td>
+            <td style="height: 35px;"></td>
+            <td style="height: 35px;"></td>
           </tr>
         </table>
       </div>
@@ -425,16 +316,16 @@
   </div>
 
   <!-- ========================================================
-       FRONT MATTER - PAGE 4: DECLARATION
+       PAGE 4: DECLARATION
   ======================================================== -->
-  <div class="page page-break">
+  <div class="report-sheet page-break">
     <div class="formal-border" style="text-align: left; justify-content: space-between;">
       <div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
           <span style="font-size: 11pt;"><b>Date:</b> 27 / 10 / 2026</span>
           <span style="font-size: 11pt;"><b>Place:</b> Pune</span>
         </div>
-        <h1 style="text-align: center; font-size: 22pt; margin-bottom: 25px;">Declaration</h1>
+        <h1 style="text-align: center; font-size: 22pt; margin-bottom: 30px;">Declaration</h1>
 
         <p>
           We, <b>Akshay Darji</b> and <b>Priyesh Nandanwar</b>, on behalf of our team hereby declare that this Mini Project report entitled 
@@ -450,7 +341,7 @@
         </p>
       </div>
 
-      <div style="margin-top: 45px;">
+      <div style="margin-top: 50px;">
         <table>
           <tr>
             <th style="width: 20%;">Field</th>
@@ -478,1844 +369,222 @@
   </div>
 
   <!-- ========================================================
-       PAGE 1: TABLE OF CONTENTS (Part 1)
+       MAIN BODY OF REPORT
   ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
+  <div class="report-sheet">
     
-    <h1 style="text-align: center; font-size: 18pt; letter-spacing: 1px; margin-bottom: 18px;">TABLE OF CONTENTS</h1>
-
-    <table class="toc-table">
-      <tr>
-        <td class="toc-num">1.1</td>
-        <td class="toc-title">EXISTING SYSTEM, PROPOSED SYSTEM AND NEED AND OBJECTIVE OF SYSTEM ..................................................................................................</td>
-        <td class="toc-page">4</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.1.1 Existing System .................................................................................................................................</td>
-        <td class="toc-page">4</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.1.2 Proposed System ................................................................................................................................</td>
-        <td class="toc-page">5</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.1.3 Comparative Analysis ..........................................................................................................................</td>
-        <td class="toc-page">6</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.1.4 Need for the System .............................................................................................................................</td>
-        <td class="toc-page">6</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.1.5 Objectives of the System .....................................................................................................................</td>
-        <td class="toc-page">7</td>
-      </tr>
-      <tr>
-        <td class="toc-num">1.2</td>
-        <td class="toc-title">SCOPE OF WORK .................................................................................................................................</td>
-        <td class="toc-page">8</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.2.1 Functional Scope ................................................................................................................................</td>
-        <td class="toc-page">8</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.2.2 Technical Scope .................................................................................................................................</td>
-        <td class="toc-page">8</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.2.3 Out of Scope and Boundaries ............................................................................................................</td>
-        <td class="toc-page">9</td>
-      </tr>
-      <tr>
-        <td class="toc-num">1.3</td>
-        <td class="toc-title">OPERATING ENVIRONMENT &ndash; HARDWARE AND SOFTWARE ...............................................</td>
-        <td class="toc-page">9</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.3.1 Hardware Requirements ....................................................................................................................</td>
-        <td class="toc-page">9</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.3.2 Software Requirements .....................................................................................................................</td>
-        <td class="toc-page">10</td>
-      </tr>
-      <tr>
-        <td class="toc-num">1.4</td>
-        <td class="toc-title">DESCRIPTION OF TECHNOLOGY USED ..........................................................................................</td>
-        <td class="toc-page">11</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.1 Python 3.11 Runtime Environment .....................................................................................................</td>
-        <td class="toc-page">11</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.2 Django 6.0 and Gunicorn WSGI Server ..............................................................................................</td>
-        <td class="toc-page">11</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.3 Django REST Framework &amp; SimpleJWT ........................................................................................</td>
-        <td class="toc-page">11</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.4 React 18 &amp; Vite Tooling ...................................................................................................................</td>
-        <td class="toc-page">11</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.5 Tailwind CSS Utility-First Framework .................................................................................................</td>
-        <td class="toc-page">11</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.6 PostgreSQL 16 &amp; Neon Serverless Persistence .............................................................................</td>
-        <td class="toc-page">12</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.7 QRCode.react &amp; Cryptographic Verification Engine .......................................................................</td>
-        <td class="toc-page">12</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">1.4.8 WhiteNoise Static Serving &amp; Cloud Deployment ...........................................................................</td>
-        <td class="toc-page">12</td>
-      </tr>
-      <tr>
-        <td class="toc-num">2.</td>
-        <td class="toc-title">PROPOSED SYSTEM ..........................................................................................................................</td>
-        <td class="toc-page">13</td>
-      </tr>
-      <tr>
-        <td class="toc-num">2.1</td>
-        <td class="toc-title">FEASIBILITY STUDY ............................................................................................................................</td>
-        <td class="toc-page">14</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">2.1.1 Technical Feasibility .........................................................................................................................</td>
-        <td class="toc-page">14</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">2.1.2 Operational Feasibility ......................................................................................................................</td>
-        <td class="toc-page">14</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">2.1.3 Economic Feasibility .........................................................................................................................</td>
-        <td class="toc-page">14</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">2.1.4 Feasibility Conclusion .......................................................................................................................</td>
-        <td class="toc-page">14</td>
-      </tr>
-      <tr>
-        <td class="toc-num">2.2</td>
-        <td class="toc-title">USER REQUIREMENTS .......................................................................................................................</td>
-        <td class="toc-page">15</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">2.2.1 User Classes and Actor Profiles .......................................................................................................</td>
-        <td class="toc-page">15</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.</td>
-        <td class="toc-title">SYSTEM DESIGN .................................................................................................................................</td>
-        <td class="toc-page">16</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.1</td>
-        <td class="toc-title">Object Diagram ....................................................................................................................................</td>
-        <td class="toc-page">16</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.2</td>
-        <td class="toc-title">Class Diagram ......................................................................................................................................</td>
-        <td class="toc-page">17</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.3</td>
-        <td class="toc-title">Use Case Diagram ................................................................................................................................</td>
-        <td class="toc-page">18</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.4</td>
-        <td class="toc-title">Sequence Diagram ................................................................................................................................</td>
-        <td class="toc-page">18</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.5</td>
-        <td class="toc-title">Activity Diagram ...................................................................................................................................</td>
-        <td class="toc-page">19</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.6</td>
-        <td class="toc-title">Module Hierarchy Diagram ..................................................................................................................</td>
-        <td class="toc-page">20</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.7</td>
-        <td class="toc-title">USER INTERFACE DESIGN .................................................................................................................</td>
-        <td class="toc-page">20</td>
-      </tr>
-    </table>
-
-    <div class="page-footer">Page 1</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 2: TABLE OF CONTENTS (Part 2)
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <table class="toc-table">
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">3.7.1 UI Architecture Philosophy ................................................................................................................</td>
-        <td class="toc-page">20</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">3.7.2 Navigation and State Diagram .............................................................................................................</td>
-        <td class="toc-page">21</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">3.7.3 Screen Inventory ................................................................................................................................</td>
-        <td class="toc-page">22</td>
-      </tr>
-      <tr>
-        <td class="toc-num">3.8</td>
-        <td class="toc-title">TABLE SPECIFICATIONS ...................................................................................................................</td>
-        <td class="toc-page">22</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">3.8.1 Database Architecture Rationale .........................................................................................................</td>
-        <td class="toc-page">22</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">3.8.2 Entity-Relationship Diagram ................................................................................................................</td>
-        <td class="toc-page">23</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">3.8.3 Data Dictionaries ................................................................................................................................</td>
-        <td class="toc-page">24</td>
-      </tr>
-      <tr>
-        <td class="toc-num">4.</td>
-        <td class="toc-title">INPUT AND OUTPUT SCREENS ..........................................................................................................</td>
-        <td class="toc-page">26</td>
-      </tr>
-      <tr>
-        <td class="toc-num">4.1</td>
-        <td class="toc-title">INPUT SCREENS ..................................................................................................................................</td>
-        <td class="toc-page">26</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.1.1 Authentication &amp; Login Screen (/login) ...........................................................................................</td>
-        <td class="toc-page">26</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.1.2 Document Upload &amp; Vault Locker (/certificates) .........................................................................</td>
-        <td class="toc-page">27</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.1.3 Placement Talent Search &amp; Eligibility Filter (/placement) .............................................................</td>
-        <td class="toc-page">29</td>
-      </tr>
-      <tr>
-        <td class="toc-num">4.2</td>
-        <td class="toc-title">OUTPUT SCREENS ...............................................................................................................................</td>
-        <td class="toc-page">30</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.2.1 Committee Verification Queue (/committee/documents) .................................................................</td>
-        <td class="toc-page">30</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.2.2 Public Candidate Verification Dossier (/student/:id) ....................................................................</td>
-        <td class="toc-page">31</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.2.3 Interview Key Cryptographic QR Modal (/certificates) ...................................................................</td>
-        <td class="toc-page">32</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.2.4 Dynamic Alumni Directory (/alumni) .................................................................................................</td>
-        <td class="toc-page">33</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">4.2.5 Direct Certificate Public Audit Screen (/verify/:id) .......................................................................</td>
-        <td class="toc-page">35</td>
-      </tr>
-      <tr>
-        <td class="toc-num">5.</td>
-        <td class="toc-title">TEST PROCEDURES AND IMPLEMENTATION .................................................................................</td>
-        <td class="toc-page">37</td>
-      </tr>
-      <tr>
-        <td class="toc-num">5.1</td>
-        <td class="toc-title">IMPLEMENTATION STRATEGY ..........................................................................................................</td>
-        <td class="toc-page">37</td>
-      </tr>
-      <tr>
-        <td class="toc-num">5.2</td>
-        <td class="toc-title">TEST STRATEGY AND TESTING ENVIRONMENT ............................................................................</td>
-        <td class="toc-page">37</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">5.2.1 Testing Levels ....................................................................................................................................</td>
-        <td class="toc-page">37</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">5.2.2 Test Environment ...............................................................................................................................</td>
-        <td class="toc-page">38</td>
-      </tr>
-      <tr>
-        <td class="toc-num">5.3</td>
-        <td class="toc-title">TEST CASES AND TEST RESULTS ....................................................................................................</td>
-        <td class="toc-page">38</td>
-      </tr>
-      <tr>
-        <td class="toc-num">5.4</td>
-        <td class="toc-title">DEFECTS FOUND AND RESOLVED ....................................................................................................</td>
-        <td class="toc-page">40</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">5.4.1 Defect 1: Production Media File 404 Resolution via re_path &amp; serve ...........................................</td>
-        <td class="toc-page">40</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">5.4.2 Defect 2: Monorepo Root Directory Build Configuration on Vercel .................................................</td>
-        <td class="toc-page">41</td>
-      </tr>
-      <tr>
-        <td class="toc-num">6.</td>
-        <td class="toc-title">SAMPLE CODE ...................................................................................................................................</td>
-        <td class="toc-page">42</td>
-      </tr>
-      <tr>
-        <td class="toc-num">6.1</td>
-        <td class="toc-title">CUSTOM USER MODEL &amp; ROLE GOVERNANCE (accounts/models.py) ...................................</td>
-        <td class="toc-page">42</td>
-      </tr>
-      <tr>
-        <td class="toc-num">6.2</td>
-        <td class="toc-title">DOCUMENT VALIDATION &amp; ENCRYPTION MODEL (documents/models.py) ...........................</td>
-        <td class="toc-page">44</td>
-      </tr>
-      <tr>
-        <td class="toc-num">6.3</td>
-        <td class="toc-title">COMMITTEE VERIFICATION &amp; REJECTION VIEW (documents/views.py) .................................</td>
-        <td class="toc-page">46</td>
-      </tr>
-      <tr>
-        <td class="toc-num">6.4</td>
-        <td class="toc-title">DYNAMIC API MEDIA RESOLVER (src/api/apiClient.js) .............................................................</td>
-        <td class="toc-page">47</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td style="padding-left: 20px;">Explanation .................................................................................................................................................</td>
-        <td class="toc-page">48</td>
-      </tr>
-      <tr>
-        <td class="toc-num">7.</td>
-        <td class="toc-title">LIMITATIONS ......................................................................................................................................</td>
-        <td class="toc-page">50</td>
-      </tr>
-      <tr>
-        <td class="toc-num">7.1</td>
-        <td class="toc-title">Render Free-Tier Spin-Down (Cold Starts) .................................................................................................</td>
-        <td class="toc-page">50</td>
-      </tr>
-      <tr>
-        <td class="toc-num">7.2</td>
-        <td class="toc-title">Ephemeral Container Storage vs. Persistent RDBMS ..............................................................................</td>
-        <td class="toc-page">50</td>
-      </tr>
-      <tr>
-        <td class="toc-num">7.3</td>
-        <td class="toc-title">Manual Committee Review Dependency ...................................................................................................</td>
-        <td class="toc-page">50</td>
-      </tr>
-      <tr>
-        <td class="toc-num">7.4</td>
-        <td class="toc-title">Operational and Evaluation Limits .............................................................................................................</td>
-        <td class="toc-page">51</td>
-      </tr>
-      <tr>
-        <td class="toc-num">8.</td>
-        <td class="toc-title">FUTURE SCOPE .................................................................................................................................</td>
-        <td class="toc-page">52</td>
-      </tr>
-      <tr>
-        <td class="toc-num">8.1</td>
-        <td class="toc-title">Decentralized Blockchain Verification (Ethereum / Polygon) ....................................................................</td>
-        <td class="toc-page">52</td>
-      </tr>
-      <tr>
-        <td class="toc-num">8.2</td>
-        <td class="toc-title">Persistent Object Storage (Amazon S3 / Cloudinary) ................................................................................</td>
-        <td class="toc-page">52</td>
-      </tr>
-      <tr>
-        <td class="toc-num">8.3</td>
-        <td class="toc-title">AI-Powered OCR Credential Verification ....................................................................................................</td>
-        <td class="toc-page">52</td>
-      </tr>
-      <tr>
-        <td class="toc-num">8.4</td>
-        <td class="toc-title">National Academic Depository (NAD) &amp; DigiLocker API Integration ...................................................</td>
-        <td class="toc-page">52</td>
-      </tr>
-      <tr>
-        <td class="toc-num">9.</td>
-        <td class="toc-title">CONCLUSION .....................................................................................................................................</td>
-        <td class="toc-page">54</td>
-      </tr>
-      <tr>
-        <td class="toc-num">9.1</td>
-        <td class="toc-title">Technical Summary .....................................................................................................................................</td>
-        <td class="toc-page">54</td>
-      </tr>
-      <tr>
-        <td class="toc-num">9.2</td>
-        <td class="toc-title">Academic and Professional Reflection ........................................................................................................</td>
-        <td class="toc-page">54</td>
-      </tr>
-      <tr>
-        <td class="toc-num">10.</td>
-        <td class="toc-title">REFERENCES .....................................................................................................................................</td>
-        <td class="toc-page">55</td>
-      </tr>
-    </table>
-
-    <div class="page-footer">Page 2</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 4: CHAPTER 1 - INTRODUCTION
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h1 class="chapter-title">1. INTRODUCTION</h1>
-
-    <p>Academic credential management, verification, and placement screening across higher educational institutions continue to face severe inefficiencies due to legacy paper-bound workflows and unauthenticated digital assets. Higher education institutions handle tens of thousands of degrees, marksheets, certificates, and internship letters annually. When students apply for placement recruitment or higher education abroad, background screening agencies and corporate HR departments spend weeks attempting to verify the validity of photocopies and unverified PDFs. EduVault addresses this systemic vulnerability by serving as a secure, decentralized digital locker and cryptographic verification platform.</p>
-
-    <p>This chapter examines the existing institutional procedures and their inherent vulnerabilities, details the architecture of the proposed EduVault platform, defines the system scope, specifies the hardware and software operating environment, and provides a technical justification for every chosen technology in the stack.</p>
-
-    <h2 class="section-title">1.1 EXISTING SYSTEM, PROPOSED SYSTEM AND NEED AND OBJECTIVE OF SYSTEM</h2>
-
-    <h3 class="subsection-title">1.1.1 Existing System</h3>
-    <p>The contemporary academic ecosystem operates across fragmented administrative silos. Existing workflows fall into four primary mechanisms:</p>
-
-    <p><b>(a) Physical Photocopies and Attested Transcripts.</b> Students obtain paper marksheets, physically visit institutional offices for authorized rubber stamps and signatures, and submit paper bundles during campus drives. Paper certificates degrade, are easily lost or damaged, and incur ongoing storage and courier costs.</p>
-
-    <p><b>(b) Unauthenticated Scans and Vulnerability to Alteration.</b> Students frequently share electronic PDF scans via email. However, non-cryptographic PDF documents can be altered using modern editing tools to forge marks, alter names, or generate counterfeit graduation certificates. Recruiters cannot determine authenticity from visual inspection alone.</p>
-
-    <p><b>(c) Disconnected Placement Operations.</b> Campus placement cells (Training &amp; Placement Offices) spend days manually compiling, verifying, and formatting candidate spreadsheets (CGPA, active backlogs, achievements, and project links). These spreadsheets are static and prone to student self-reporting errors.</p>
-
-    <p><b>(d) Static and Inaccessible Alumni Directories.</b> Institutions maintain stagnant Excel databases of graduated alumni. Students looking for career mentorship or job referrals have no real-time platform to discover alumni by employer, role, or mentorship availability.</p>
-
-    <div class="page-footer">Page 4</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 5: CHAPTER 1 - PROPOSED SYSTEM OVERVIEW
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h3 class="subsection-title">1.1.2 Proposed System</h3>
-    <p>EduVault is a role-governed, cloud-native Digital Locker and Academic Credential Verification Platform. The system decouples presentation, business logic, and database persistence into an asynchronous client-server architecture supporting four distinct institutional roles:</p>
-
-    <ol style="padding-left: 20px; margin-top: 5px;">
-      <li><b>Student Vault:</b> Provides students with a digital locker to upload marksheets, certificates, internships, and project portfolios. Features an instant cryptographic <b>Interview Key</b> that compiles approved credentials into a verified QR code for mobile scanning.</li>
-      <li><b>Academic Verification Committee:</b> A dedicated institutional validation queue where faculty reviewers inspect original uploads via an in-app viewer, approve genuine records, or reject invalid submissions with actionable feedback.</li>
-      <li><b>Campus Placement &amp; Corporate Relations Portal:</b> A recruiter-facing portal offering real-time candidate search, department filtering, and CGPA thresholds (e.g. &ge; 9.0, &ge; 8.0) directly linked to verified dossiers.</li>
-      <li><b>Dynamic Alumni Network:</b> An interactive directory where graduated alumni can update their current employer, designation, location, and toggle a public mentorship availability badge.</li>
-      <li><b>Public Verification Gateway:</b> Open, secure endpoints allowing corporate interviewers to scan QR codes or open unique links (<code>/student/:id</code> or <code>/verify/:verification_id</code>) to view authenticated dossiers on mobile or desktop without login credentials.</li>
-    </ol>
-
-    <div class="wireframe-box">
-+----------------------------------------------------------------------------------------------------+
-|                                    EduVault Architecture Flow                                      |
-+----------------------------------------------------------------------------------------------------+
-| [Student] --------> (Uploads PDF <= 5MB) -------> [Pending Queue] -------> [Academic Committee]   |
-|                                                                                    |               |
-|                                                                                    v               |
-| [Recruiter] <------ (Mobile QR Scan) <---------- [Verified Dossier] <------ (Approves Credential) |
-|      |                                                    ^                                        |
-|      +------------> [Placement Portal] -------------------+                                        |
-+----------------------------------------------------------------------------------------------------+
-    </div>
-    <div class="figure-caption">Figure 1.1: High-level architectural workflow of the EduVault platform.</div>
-
-    <div class="page-footer">Page 5</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 6: COMPARATIVE ANALYSIS & NEED
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h3 class="subsection-title">1.1.3 Comparative Analysis</h3>
-    <div class="table-caption">Table 1.1: Comparison of existing credential verification methods with EduVault.</div>
+    <!-- INDEX TABLE -->
+    <h1 style="text-align: center;">Project Report Index</h1>
     <table>
       <tr>
-        <th style="width: 5%;">Sr.</th>
-        <th style="width: 19%;">Parameter</th>
-        <th style="width: 25%;">Manual Paper Records</th>
-        <th style="width: 25%;">Generic Cloud Storage (Drive/Dropbox)</th>
-        <th style="width: 26%;">EduVault Platform</th>
+        <th style="width: 12%;">Index</th>
+        <th style="width: 76%;">Section Title</th>
+        <th style="width: 12%;">Page</th>
       </tr>
-      <tr>
-        <td>1</td>
-        <td><b>Credential Authenticity</b></td>
-        <td>Vulnerable to physical forgery and fake stamps.</td>
-        <td>Unverified self-uploaded files; no authority seal.</td>
-        <td><b>Cryptographically locked; verified exclusively by university committee.</b></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td><b>Verification Speed</b></td>
-        <td>1 to 3 weeks via postal mail or administrative visits.</td>
-        <td>Immediate access to file, but validity remains unverified.</td>
-        <td><b>Instantaneous (&lt; 1 second) via dynamic QR code camera scan.</b></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td><b>Role Governance</b></td>
-        <td>Manual file access registers in registrar office.</td>
-        <td>Binary sharing link (view/edit); no institutional roles.</td>
-        <td><b>Strict 4-tier RBAC (Student, Alumni, Committee, Placement).</b></td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td><b>Placement Integration</b></td>
-        <td>Manual Excel compilation by faculty coordinators.</td>
-        <td>Students provide resume links in forms; errors common.</td>
-        <td><b>Live filterable talent pool with verified CGPA thresholds.</b></td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td><b>Audit Trail &amp; Rejection</b></td>
-        <td>Informal verbal or paper return; no digital record.</td>
-        <td>None.</td>
-        <td><b>Immutable timestamps, reviewer identity, and feedback logs.</b></td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td><b>Mobile Usability</b></td>
-        <td>Requires carrying heavy physical folders.</td>
-        <td>Requires installing drive apps and folder navigation.</td>
-        <td><b>Universal camera scan opens clean, zero-app mobile dossier.</b></td>
-      </tr>
+      <tr><td style="text-align: center;"><b>1</b></td><td><b>INTRODUCTION</b></td><td style="text-align: center;">1</td></tr>
+      <tr><td style="text-align: center;">1.1</td><td>EXISTING SYSTEM, PROPOSED SYSTEM AND NEED AND OBJECTIVE OF SYSTEM</td><td style="text-align: center;">1</td></tr>
+      <tr><td style="text-align: center;">1.2</td><td>SCOPE OF WORK</td><td style="text-align: center;">3</td></tr>
+      <tr><td style="text-align: center;">1.3</td><td>OPERATING ENVIRONMENT – HARDWARE AND SOFTWARE</td><td style="text-align: center;">4</td></tr>
+      <tr><td style="text-align: center;">1.4</td><td>DESCRIPTION OF TECHNOLOGY USED</td><td style="text-align: center;">5</td></tr>
+      <tr><td style="text-align: center;"><b>2</b></td><td><b>PROPOSED SYSTEM</b></td><td style="text-align: center;">7</td></tr>
+      <tr><td style="text-align: center;">2.1</td><td>FEASIBILITY STUDY</td><td style="text-align: center;">7</td></tr>
+      <tr><td style="text-align: center;">2.2</td><td>USER REQUIREMENTS</td><td style="text-align: center;">9</td></tr>
+      <tr><td style="text-align: center;"><b>3</b></td><td><b>ANALYSIS AND DESIGN (If Applicable)</b></td><td style="text-align: center;">11</td></tr>
+      <tr><td style="text-align: center;">3.1</td><td>OBJECT DIAGRAM</td><td style="text-align: center;">11</td></tr>
+      <tr><td style="text-align: center;">3.2</td><td>CLASS DIAGRAM</td><td style="text-align: center;">12</td></tr>
+      <tr><td style="text-align: center;">3.3</td><td>USE CASE DIAGRAM</td><td style="text-align: center;">14</td></tr>
+      <tr><td style="text-align: center;">3.4</td><td>SEQUENCE DIAGRAM</td><td style="text-align: center;">15</td></tr>
+      <tr><td style="text-align: center;">3.5</td><td>ACTIVITY DIAGRAM</td><td style="text-align: center;">17</td></tr>
+      <tr><td style="text-align: center;">3.6</td><td>MODULE HIERARCHY DIAGRAM</td><td style="text-align: center;">18</td></tr>
+      <tr><td style="text-align: center;">3.7</td><td>USER INTERFACE DESIGN (SCREENS ETC.)</td><td style="text-align: center;">19</td></tr>
+      <tr><td style="text-align: center;">3.8</td><td>TABLE SPECIFICATIONS</td><td style="text-align: center;">21</td></tr>
+      <tr><td style="text-align: center;"><b>4</b></td><td><b>INPUT AND OUTPUT SCREENS</b></td><td style="text-align: center;">24</td></tr>
+      <tr><td style="text-align: center;"><b>5</b></td><td><b>TEST PROCEDURES AND IMPLEMENTATION</b></td><td style="text-align: center;">28</td></tr>
+      <tr><td style="text-align: center;"><b>6</b></td><td><b>SAMPLE CODE</b></td><td style="text-align: center;">32</td></tr>
+      <tr><td style="text-align: center;"><b>7</b></td><td><b>LIMITATIONS</b></td><td style="text-align: center;">36</td></tr>
+      <tr><td style="text-align: center;"><b>8</b></td><td><b>FUTURE SCOPE</b></td><td style="text-align: center;">37</td></tr>
+      <tr><td style="text-align: center;"><b>9</b></td><td><b>CONCLUSION</b></td><td style="text-align: center;">38</td></tr>
+      <tr><td style="text-align: center;"><b>10</b></td><td><b>REFERENCES</b></td><td style="text-align: center;">39</td></tr>
     </table>
 
-    <h3 class="subsection-title">1.1.4 Need for the System</h3>
-    <p><b>Eradicating Academic Fraud:</b> The proliferation of fraudulent degrees in corporate recruitment places severe legal and financial liabilities on hiring organizations. EduVault provides an authoritative, unalterable record directly certified by academic institutions.</p>
-    <p><b>Streamlining Placement Drives:</b> Placement teams face immense time pressure during campus seasons. EduVault enables recruiters to evaluate authenticated student resumes, project repositories, and verified marks in a unified window.</p>
-    <p><b>Alumni-Student Engagement:</b> Colleges struggle to maintain active alumni networks. EduVault provides students with direct access to mentors working in industry.</p>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-    <div class="page-footer">Page 6</div>
-  </div>
+    <!-- 1. INTRODUCTION -->
+    <h2>1. INTRODUCTION</h2>
+    
+    <h3>1.1 Existing System, Proposed System and Need and Objective of System</h3>
+    <p><b>Existing System:</b> Traditional academic credential management in higher education institutes heavily depends on physical paper documents or unauthenticated PDF files. In this manual model, students submit physical photocopies for placement eligibility and administrative checks. Academic verification committees manually inspect and stamp records, leading to severe administrative overhead, multi-week delays for corporate background checks, and an inherent vulnerability to resume fraud and document alteration.</p>
 
-  <!-- ========================================================
-       PAGE 7: OBJECTIVES
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
+    <p><b>Proposed System (EduVault):</b> EduVault is an enterprise-grade Digital Locker and Academic Credential Verification platform. It provides a secure, role-governed ecosystem supporting four primary user roles: <i>Student</i>, <i>Alumni</i>, <i>Academic Committee</i>, and <i>Placement Team</i>. Students securely upload marksheets, certificates, internships, and technical projects. The Academic Committee reviews and verifies credentials in real-time. Placement officers leverage verified student dossiers with dynamic CGPA and departmental filtering. Every candidate receives a cryptographic <b>Interview Key</b> that compiles into an instant QR Code for on-the-spot mobile verification by recruiters.</p>
 
-    <h3 class="subsection-title">1.1.5 Objectives of the System</h3>
-    <p>The technical and institutional objectives of EduVault are formulated with verifiable engineering criteria:</p>
+    <p><b>Need of the System:</b> There is a critical institutional need to eradicate academic fraud, streamline campus placement drives, and offer students lifelong cloud-native access to authenticated academic credentials. EduVault provides an immutable, transparent single source of truth for students, recruiters, and administrators.</p>
 
-    <div class="table-caption">Table 1.2: Engineering objectives and verification criteria.</div>
-    <table>
-      <tr>
-        <th style="width: 8%;">ID</th>
-        <th style="width: 46%;">Objective</th>
-        <th style="width: 46%;">Verification Criterion</th>
-      </tr>
-      <tr>
-        <td><b>O1</b></td>
-        <td>Implement Role-Based Access Control (RBAC) across four user classes: Student, Alumni, Committee, and Placement Team.</td>
-        <td>All endpoints enforce permissions; unauthorized access returns HTTP 403 Forbidden with automatic frontend bounce-back.</td>
-      </tr>
-      <tr>
-        <td><b>O2</b></td>
-        <td>Develop a secure digital locker supporting multi-category document upload (PDF, JPG, PNG &le; 5 MB) with MIME validation.</td>
-        <td>Uploads rejected if file exceeds 5 MB or uses illegal extensions; valid files saved with status <code>PENDING</code>.</td>
-      </tr>
-      <tr>
-        <td><b>O3</b></td>
-        <td>Build an interactive Academic Committee Queue with in-app PDF preview, approval execution, and rejection feedback.</td>
-        <td>Committee reviews documents; approval sets status <code>VERIFIED</code> with timestamp; rejection dispatches feedback to student.</td>
-      </tr>
-      <tr>
-        <td><b>O4</b></td>
-        <td>Generate dynamic, cryptographic <b>Interview Key</b> QR codes linking physical interview sessions to live student dossiers.</td>
-        <td>Scanning QR code via mobile camera loads candidate profile (<code>/student/:id</code>) with verified badges and credentials.</td>
-      </tr>
-      <tr>
-        <td><b>O5</b></td>
-        <td>Deliver a Placement Talent Pool portal with real-time CGPA threshold filtering and verified credential filters.</td>
-        <td>Placement officers filter candidate pool by department and CGPA (&ge; 9.0, &ge; 8.0, &ge; 7.5); table renders matching candidates.</td>
-      </tr>
-      <tr>
-        <td><b>O6</b></td>
-        <td>Build a live database-backed Alumni Network with search, department filtering, and mentorship availability toggles.</td>
-        <td>Alumni directory fetches real records; live search debounces input; profile links open verified alumni dossiers.</td>
-      </tr>
-      <tr>
-        <td><b>O7</b></td>
-        <td>Ensure production media routing so uploaded certificates can be viewed directly from cloud web services.</td>
-        <td>"View File" button resolves full backend API media URL; browser displays PDF/image directly in a new tab.</td>
-      </tr>
-      <tr>
-        <td><b>O8</b></td>
-        <td>Deploy full-stack architecture to 100% free production cloud tiers (Vercel, Render, and Neon Serverless PostgreSQL).</td>
-        <td>Application accessible globally over HTTPS with zero operational software hosting costs.</td>
-      </tr>
-    </table>
-
-    <div class="page-footer">Page 7</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 8: SCOPE OF WORK
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">1.2 SCOPE OF WORK</h2>
-
-    <h3 class="subsection-title">1.2.1 Functional Scope</h3>
-    <p><b>User Authentication &amp; Profile Lifecycle:</b> Registration and login with JWT access and refresh tokens. Dedicated profile management for students (PRN, CGPA, Batch, Skills, Bio) and alumni (Company, Designation, Location, Mentorship toggle).</p>
-    <p><b>Document Vault Management:</b> Secure uploading, category assignment (Certificate, Marksheet, Internship, Project, Achievement, Other), status tracking (Pending, Verified, Rejected), and document deletion safeguards for pending items.</p>
-    <p><b>Committee Verification Pipeline:</b> Filterable review queue, in-app modal document previewer supporting PDFs and image formats, single-click approval, and granular rejection feedback dispatch.</p>
-    <p><b>Campus Placement Talent Engine:</b> Aggregate metrics (Total Candidates, Drive Eligible, Avg CGPA), multi-parameter search, CGPA threshold pills, and candidate profile drawers.</p>
-    <p><b>Dynamic Alumni Directory:</b> Searchable alumni cards with company badges, designation tags, and mentorship contact points.</p>
-    <p><b>Public Verification Gateway:</b> Open, unauthenticated dossier view (<code>/student/:id</code>) and direct certificate verification page (<code>/verify/:id</code>) for corporate interviewers.</p>
-
-    <h3 class="subsection-title">1.2.2 Technical Scope</h3>
-    <p><b>Backend Architecture:</b> Python 3.11 with Django 6.0 and Django REST Framework, utilizing Gunicorn as the production WSGI application server.</p>
-    <p><b>Database Persistence:</b> PostgreSQL 16 hosted on Neon Serverless Cloud, managed via Django ORM with full ACID compliance and foreign key cascade constraints.</p>
-    <p><b>Frontend Client:</b> React 18 SPA built with Vite bundler, utilizing Tailwind CSS for utility-first styling and Lucide React icons.</p>
-    <p><b>Cryptographic Generation:</b> UUIDv4 tokens generated per document, compiled into client-side rendered QR codes using <code>qrcode.react</code> and QRServer API.</p>
-    <p><b>Cloud Infrastructure:</b> Vercel for frontend SPA edge delivery; Render for backend container hosting; Neon for serverless PostgreSQL database.</p>
-
-    <div class="page-footer">Page 8</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 9: BOUNDARIES & OPERATING ENVIRONMENT
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h3 class="subsection-title">1.2.3 Out of Scope and Boundaries</h3>
-    <p>The following areas are explicitly excluded from the current version of the project:</p>
-    <ol style="padding-left: 20px;">
-      <li><b>Automated OCR Document Verification:</b> The system does not automatically parse scanned text using AI/OCR. Verification relies on authorized human committee inspection.</li>
-      <li><b>Payment Gateway Integration:</b> Fee collection for official transcript issuance is excluded from this release.</li>
-      <li><b>Native Mobile App Store Packages:</b> The system is delivered as a fully responsive web application and does not include compiled native iOS (.ipa) or Android (.apk) binaries.</li>
-      <li><b>Direct University ERP Integration:</b> The system does not execute automated bi-directional synchronization with external legacy university ERP databases.</li>
-    </ol>
-
-    <h2 class="section-title">1.3 OPERATING ENVIRONMENT &ndash; HARDWARE AND SOFTWARE</h2>
-
-    <h3 class="subsection-title">1.3.1 Hardware Requirements</h3>
-    <div class="table-caption">Table 1.3: Hardware requirements by deployment role.</div>
-    <table>
-      <tr>
-        <th>Role</th>
-        <th>Component</th>
-        <th>Minimum Specification</th>
-        <th>Recommended Specification</th>
-      </tr>
-      <tr>
-        <td rowspan="4"><b>Development &amp; Testing Workstation</b></td>
-        <td>Processor</td>
-        <td>Dual-Core 64-bit CPU, 2.0 GHz (x86-64)</td>
-        <td>Quad-Core Intel Core i5/i7 (11th Gen+) or AMD Ryzen 5/7</td>
-      </tr>
-      <tr>
-        <td>RAM</td>
-        <td>8 GB</td>
-        <td>16 GB DDR4/DDR5</td>
-      </tr>
-      <tr>
-        <td>Storage</td>
-        <td>256 GB SSD (5 GB free space)</td>
-        <td>512 GB NVMe SSD</td>
-      </tr>
-      <tr>
-        <td>Network</td>
-        <td>10 Mbps broadband connection</td>
-        <td>50 Mbps+ Wi-Fi / Ethernet connection</td>
-      </tr>
-      <tr>
-        <td rowspan="3"><b>Cloud Production Server (Render / Neon)</b></td>
-        <td>Compute</td>
-        <td>0.5 vCPU (Render Free Tier)</td>
-        <td>1 vCPU shared, 512 MB RAM container</td>
-      </tr>
-      <tr>
-        <td>Database Compute</td>
-        <td>0.25 vCPU Serverless Neon compute</td>
-        <td>Autoscaling Neon compute with 0.5 GB storage</td>
-      </tr>
-      <tr>
-        <td>Network Bandwidth</td>
-        <td>100 Mbps cloud interface</td>
-        <td>Global Edge CDN with SSL termination</td>
-      </tr>
-      <tr>
-        <td rowspan="3"><b>End-User Client Device</b></td>
-        <td>Processor</td>
-        <td>Dual-Core 1.5 GHz mobile or desktop CPU</td>
-        <td>Modern smartphone (Octa-Core) or laptop</td>
-      </tr>
-      <tr>
-        <td>Display &amp; Input</td>
-        <td>Screen resolution 360 &times; 640 px (mobile)</td>
-        <td>Full HD 1920 &times; 1080 px display, camera for QR scanning</td>
-      </tr>
-      <tr>
-        <td>Network</td>
-        <td>3G / 4G cellular data (2 Mbps)</td>
-        <td>4G / 5G / Broadband Wi-Fi (10 Mbps+)</td>
-      </tr>
-    </table>
-
-    <div class="page-footer">Page 9</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 10: SOFTWARE REQUIREMENTS & ARCHITECTURE
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h3 class="subsection-title">1.3.2 Software Requirements</h3>
-    <div class="table-caption">Table 1.4: Software requirements.</div>
-    <table>
-      <tr>
-        <th>Category</th>
-        <th>Software Tool</th>
-        <th>Version / Specification</th>
-        <th>Purpose in Project</th>
-      </tr>
-      <tr>
-        <td><b>Operating System</b></td>
-        <td>Windows 11 / Ubuntu Linux</td>
-        <td>64-bit OS</td>
-        <td>Primary development, debugging, and testing environment</td>
-      </tr>
-      <tr>
-        <td><b>Backend Language</b></td>
-        <td>Python</td>
-        <td>3.11.x</td>
-        <td>Backend application logic, model definitions, and validation</td>
-      </tr>
-      <tr>
-        <td><b>Web Framework</b></td>
-        <td>Django</td>
-        <td>6.0.x</td>
-        <td>Core web framework, ORM, CSRF, and security middleware</td>
-      </tr>
-      <tr>
-        <td><b>API Framework</b></td>
-        <td>Django REST Framework</td>
-        <td>3.16.x</td>
-        <td>RESTful API routing, serializers, and multipart form parsing</td>
-      </tr>
-      <tr>
-        <td><b>Authentication</b></td>
-        <td>SimpleJWT</td>
-        <td>5.3.x</td>
-        <td>JSON Web Token (JWT) issue, validation, and token refresh</td>
-      </tr>
-      <tr>
-        <td><b>WSGI Server</b></td>
-        <td>Gunicorn</td>
-        <td>25.x</td>
-        <td>Production WSGI HTTP server running on Render</td>
-      </tr>
-      <tr>
-        <td><b>Static Server</b></td>
-        <td>WhiteNoise</td>
-        <td>6.12.x</td>
-        <td>Serving compiled Django static assets with compression</td>
-      </tr>
-      <tr>
-        <td><b>Frontend Runtime</b></td>
-        <td>Node.js &amp; npm</td>
-        <td>Node v20.x, npm 10.x</td>
-        <td>Frontend package management and tooling execution</td>
-      </tr>
-      <tr>
-        <td><b>Frontend Library</b></td>
-        <td>React.js</td>
-        <td>18.x</td>
-        <td>Declarative component architecture and UI reactivity</td>
-      </tr>
-      <tr>
-        <td><b>Frontend Bundler</b></td>
-        <td>Vite</td>
-        <td>8.x</td>
-        <td>Ultra-fast development server and production Rollup bundler</td>
-      </tr>
-      <tr>
-        <td><b>Styling Framework</b></td>
-        <td>Tailwind CSS</td>
-        <td>3.4.x</td>
-        <td>Utility-first CSS styling and responsive grid layouts</td>
-      </tr>
-      <tr>
-        <td><b>Database Server</b></td>
-        <td>PostgreSQL</td>
-        <td>16.x (Neon Serverless)</td>
-        <td>Persistent cloud relational database storage</td>
-      </tr>
-      <tr>
-        <td><b>Version Control</b></td>
-        <td>Git &amp; GitHub</td>
-        <td>Git 2.40+</td>
-        <td>Source code versioning and automated CI/CD deployments</td>
-      </tr>
-      <tr>
-        <td><b>Web Browsers</b></td>
-        <td>Chrome, Edge, Safari</td>
-        <td>Current Stable</td>
-        <td>Client-side web execution and mobile QR testing</td>
-      </tr>
-    </table>
-
-    <div class="wireframe-box">
-+----------------------------------------------------------------------------------------------------+
-|                                    Three-Tier Architectural Stack                                  |
-+----------------------------------------------------------------------------------------------------+
-|  CLIENT TIER:        React 18 SPA + Vite + Tailwind CSS + Lucide React + QRCode.react (Vercel Edge)|
-|                                               | HTTPS / REST JSON                                  |
-|  APPLICATION TIER:   Django 6.0 REST Framework + SimpleJWT + Gunicorn + WhiteNoise (Render Linux)   |
-|                                               | SQL (psycopg2-binary)                              |
-|  DATABASE TIER:      PostgreSQL 16 (Neon Serverless Cloud Database Engine)                         |
-+----------------------------------------------------------------------------------------------------+
-    </div>
-    <div class="figure-caption">Figure 1.2: Technology stack of EduVault organized by architectural tier.</div>
-
-    <div class="page-footer">Page 10</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 11: DESCRIPTION OF TECHNOLOGY USED
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">1.4 DESCRIPTION OF TECHNOLOGY USED</h2>
-
-    <h3 class="subsection-title">1.4.1 Python 3.11 Runtime Environment</h3>
-    <p>Python 3.11 serves as the primary backend programming language for EduVault. It introduces substantial performance enhancements over prior versions through the Specialized Adaptive Interpreter (PEP 659), delivering up to 25% faster execution. Python provides clean, readable syntax, robust type-hinting, native datetime handling, and an extensive ecosystem of enterprise web packages.</p>
-
-    <h3 class="subsection-title">1.4.2 Django 6.0 and Gunicorn WSGI Server</h3>
-    <p>Django 6.0 is a battle-tested, high-level Python web framework designed on the Model-View-Controller (MVC) architectural pattern. Django provides an integrated Object-Relational Mapper (ORM) that prevents SQL injection attacks through parameterized queries. It automatically manages database schema migrations, enforces session security, and includes cross-site scripting (XSS) filters. In production on Render, Gunicorn (Green Unicorn) acts as a pre-fork worker WSGI server capable of handling multiple concurrent requests efficiently.</p>
-
-    <h3 class="subsection-title">1.4.3 Django REST Framework (DRF) &amp; SimpleJWT</h3>
-    <p>Django REST Framework empowers the backend with flexible, serializable RESTful API endpoints. DRF provides model serializers that translate complex ORM querysets into clean JSON payloads and validate incoming multipart form data. Authentication is handled using <code>rest_framework_simplejwt</code>, which issues cryptographically signed JSON Web Tokens (RFC 7519). The architecture separates short-lived access tokens (15-minute lifespan) from long-lived refresh tokens (7-day lifespan), ensuring secure, stateless session management.</p>
-
-    <h3 class="subsection-title">1.4.4 React 18 &amp; Vite Tooling</h3>
-    <p>The user interface is built as a Single-Page Application (SPA) using React 18 and Vite. React's virtual DOM and reactive hooks (<code>useState</code>, <code>useEffect</code>, <code>useMemo</code>, <code>useRef</code>) enable instant UI updates without whole-page refreshes. Vite replaces legacy Webpack bundlers, utilizing native browser ES modules (ESM) to provide sub-second hot module replacement (HMR) during development and lightning-fast Rollup builds for production deployment.</p>
-
-    <h3 class="subsection-title">1.4.5 Tailwind CSS Utility-First Framework</h3>
-    <p>Tailwind CSS is an industry-leading utility-first CSS framework. Rather than writing arbitrary custom CSS classes, interface components compose utility classes directly in JSX. Tailwind's modern color palette, spacing scale, and responsive prefixes (<code>sm:</code>, <code>md:</code>, <code>lg:</code>, <code>xl:</code>) ensure consistent design across desktop monitors, laptops, tablets, and smartphones.</p>
-
-    <div class="page-footer">Page 11</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 12: PERSISTENCE & CRYPTOGRAPHY
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h3 class="subsection-title">1.4.6 PostgreSQL 16 &amp; Neon Serverless Persistence</h3>
-    <p>PostgreSQL 16 is an advanced open-source Object-Relational Database Management System (RDBMS). It provides full ACID (Atomicity, Consistency, Isolation, Durability) transactional compliance, ensuring that operations such as user registration and document status transitions never leave the database in an inconsistent state. EduVault uses Neon Serverless PostgreSQL, an autoscaling cloud database service with zero maintenance overhead, automated failover, and high concurrent query throughput.</p>
-
-    <h3 class="subsection-title">1.4.7 QRCode.react &amp; Cryptographic Verification Engine</h3>
-    <p>To enable frictionless physical-to-digital credential inspection during in-person interviews, EduVault incorporates client-side QR generation. Each student profile and verified credential generates an immutable public URL encoded into a high-density matrix barcode. Using <code>qrcode.react</code> and the QRServer API, the system renders vector SVG and PNG barcodes on screen. An interviewer simply points any smartphone camera at the student's screen to load the official verified dossier on their mobile browser.</p>
-
-    <h3 class="subsection-title">1.4.8 WhiteNoise Static Serving &amp; Cloud Deployment</h3>
-    <p>In standard Django deployments, serving static assets (CSS, JS, images) requires configuring a separate web server like Nginx. EduVault utilizes WhiteNoise, a lightweight Python middleware that integrates directly into the WSGI pipeline. WhiteNoise manages static asset serving with gzip and Brotli compression, generating unique content hashes for immutable caching headers. The application is deployed across global edge networks via Vercel (frontend) and Render (backend).</p>
-
-    <h1 class="chapter-title" style="margin-top: 25px;">2. PROPOSED SYSTEM</h1>
-
-    <p>EduVault is designed as a decoupled, service-oriented platform organized into four tiers. Each tier carries a distinct responsibility and communicates with its peers exclusively through authenticated REST contracts:</p>
-    <ul style="padding-left: 20px;">
-      <li><b>Decoupling:</b> The React client knows only the REST contract and receives JSON responses. The Django backend operates independently of client view presentation. Either tier can be refactored or updated without breaking the other.</li>
-      <li><b>Asynchronous Execution:</b> Document uploading, status verification, and search filtering execute asynchronously via REST APIs, keeping the client interface responsive.</li>
-      <li><b>Strict Role Isolation:</b> Role guards evaluate permissions on every endpoint. Students cannot inspect committee review queues; committee members cannot manipulate placement thresholds.</li>
+    <p><b>Objectives of the System:</b></p>
+    <ul>
+      <li>Implement a high-speed, secure RESTful API using Django REST Framework and PostgreSQL.</li>
+      <li>Deliver an intuitive, responsive frontend using React 18, Vite, and Tailwind CSS.</li>
+      <li>Establish strict Role-Based Access Control (RBAC) across 4 roles.</li>
+      <li>Integrate dynamic QR Code generation for instant physical and digital interview verification.</li>
+      <li>Deploy the entire full-stack platform to 100% free production cloud tiers (Vercel, Render, and Neon).</li>
     </ul>
 
-    <div class="page-footer">Page 12</div>
-  </div>
+    <h3>1.2 Scope of Work</h3>
+    <p>The scope of EduVault covers user authentication with JWT, digital document storage with MIME-type and size validators, an academic committee approval/rejection pipeline with candidate feedback, a placement candidate discovery portal, a dynamic alumni directory with mentorship status, and public endpoints for QR-based dossier verification.</p>
 
-  <!-- ========================================================
-       PAGE 14: FEASIBILITY STUDY
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
+    <h3>1.3 Operating Environment – Hardware and Software</h3>
+    <p><b>Hardware Requirements:</b> Dual-core 2.0 GHz processor or higher, 8 GB RAM (16 GB recommended), 500 MB storage. Compatible with standard desktop browsers and modern Android/iOS mobile cameras.</p>
+    <p><b>Software Requirements:</b> Windows 11 / Ubuntu 22.04 LTS, Python 3.11, Node.js v20, Django 6.0, Django REST Framework, React 18, Vite, PostgreSQL 16 (Neon Serverless), WhiteNoise, and Gunicorn.</p>
 
-    <h2 class="section-title">2.1 FEASIBILITY STUDY</h2>
+    <h3>1.4 Description of Technology Used</h3>
+    <p><b>React 18 & Vite:</b> High-performance reactive UI rendering with instantaneous hot module reloading and fast client bundle compilation.</p>
+    <p><b>Tailwind CSS:</b> Modern utility-first CSS styling enabling responsive layouts, micro-animations, and clean typography without heavy style dependencies.</p>
+    <p><b>Django & Django REST Framework:</b> Robust Python backend framework providing built-in ORM security against SQL injections, CSRF protection, and high-throughput serialization.</p>
+    <p><b>Neon PostgreSQL 16:</b> Cloud-native serverless PostgreSQL providing full ACID compliance, foreign key integrity, and zero-maintenance storage.</p>
 
-    <h3 class="subsection-title">2.1.1 Technical Feasibility</h3>
-    <div class="table-caption">Table 2.1: Technical feasibility assessment.</div>
-    <table>
-      <tr>
-        <th style="width: 25%;">Factor</th>
-        <th style="width: 75%;">Assessment</th>
-      </tr>
-      <tr>
-        <td><b>Asynchronous REST Architecture</b></td>
-        <td>Django REST Framework with Axios on the React client provides non-blocking HTTP interactions. File uploads and queries execute smoothly without thread starvation.</td>
-      </tr>
-      <tr>
-        <td><b>Zero-Dependency Frontend</b></td>
-        <td>React SPA runs purely in standard web browsers. Users require no proprietary software, browser plugins, or native desktop installations.</td>
-      </tr>
-      <tr>
-        <td><b>MIME &amp; File Size Control</b></td>
-        <td>Strict backend validators restrict uploaded files to PDF, JPG, and PNG formats with a 5 MB ceiling, protecting against server disk exhaustion and malicious scripts.</td>
-      </tr>
-      <tr>
-        <td><b>Cross-Device Portability</b></td>
-        <td>Responsive Tailwind CSS ensures seamless rendering on mobile screens. QR code engine generates standards-compliant barcodes readable by all smartphone cameras.</td>
-      </tr>
-    </table>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-    <h3 class="subsection-title">2.1.2 Operational Feasibility</h3>
-    <div class="table-caption">Table 2.2: Operational feasibility assessment.</div>
-    <table>
-      <tr>
-        <th style="width: 25%;">Factor</th>
-        <th style="width: 75%;">Assessment</th>
-      </tr>
-      <tr>
-        <td><b>Administrative Efficiency</b></td>
-        <td>Replaces physical stamping of marksheets with a single-click verification portal. Verification turnaround decreases from 2 weeks to under 30 seconds.</td>
-      </tr>
-      <tr>
-        <td><b>User Adoption</b></td>
-        <td>Intuitive, clean UI with clear visual badges (Pending, Verified, Rejected). Requires zero specialized training for faculty or students.</td>
-      </tr>
-      <tr>
-        <td><b>Recruiter Convenience</b></td>
-        <td>Interviewers view pre-verified academic data by scanning candidate QR codes, eliminating paperwork and manual verification delays.</td>
-      </tr>
-    </table>
+    <!-- 2. PROPOSED SYSTEM -->
+    <h2>2. PROPOSED SYSTEM</h2>
+    
+    <h3>2.1 Feasibility Study</h3>
+    <p><b>Operational Feasibility:</b> The interface eliminates manual paperwork. Students can upload records in seconds; committee members review them with single-click approvals; placement officers filter candidates instantly. The system is operationally feasible and requires zero special training.</p>
+    <p><b>Technical Feasibility:</b> Built using proven, robust technologies (Python, Django, React, PostgreSQL) backed by extensive documentation and active developer communities. The system is technically sound.</p>
+    <p><b>Economic Feasibility:</b> EduVault utilizes 100% open-source software and is hosted on zero-cost production cloud infrastructure (Vercel, Render, and Neon), resulting in zero software licensing or operational hosting costs.</p>
 
-    <h3 class="subsection-title">2.1.3 Economic Feasibility</h3>
-    <p>EduVault incurs zero software licensing costs by using open-source frameworks. The production architecture runs on 100% free cloud tiers (Vercel, Render, and Neon), eliminating server procurement and maintenance expenses while saving colleges substantial paper archiving and verification labor costs.</p>
+    <h3>2.2 User Requirements</h3>
+    <p><b>Functional Requirements:</b> Secure registration & JWT login; role-based dashboard redirection; document uploading (PDF/JPG/PNG <= 5MB); committee verification & rejection with feedback; placement search with CGPA filtering; dynamic alumni registry; QR code public dossier generation.</p>
+    <p><b>Non-Functional Requirements:</b> Sub-300ms API response time; HTTPS encrypted communication; PBKDF2 password hashing with SHA-256; WCAG-compliant responsive design; persistent cloud database integrity.</p>
 
-    <h3 class="subsection-title">2.1.4 Feasibility Conclusion</h3>
-    <p>The system is technically viable, operationally beneficial, and economically zero-cost, confirming full feasibility for institutional deployment.</p>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-    <div class="page-footer">Page 14</div>
-  </div>
+    <!-- 3. ANALYSIS AND DESIGN -->
+    <h2>3. ANALYSIS AND DESIGN</h2>
 
-  <!-- ========================================================
-       PAGE 15: USER REQUIREMENTS
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">2.2 USER REQUIREMENTS</h2>
-
-    <h3 class="subsection-title">2.2.1 User Classes and Actor Profiles</h3>
-    <p>EduVault supports four distinct user classes with clear separation of privileges:</p>
-
-    <div class="table-caption">Table 2.3: User classes and privilege profiles.</div>
-    <table>
-      <tr>
-        <th>Attribute</th>
-        <th>Student</th>
-        <th>Alumni</th>
-        <th>Committee Member</th>
-        <th>Placement Officer</th>
-      </tr>
-      <tr>
-        <td><b>Description</b></td>
-        <td>Enrolled student managing personal academic credentials</td>
-        <td>Graduated student providing industry mentoring</td>
-        <td>Faculty member tasked with certifying credentials</td>
-        <td>Officer managing campus placement recruitment</td>
-      </tr>
-      <tr>
-        <td><b>Key Responsibilities</b></td>
-        <td>Upload marksheets, maintain project portfolio, share Interview Key QR</td>
-        <td>Maintain professional profile, update company and role, mentor students</td>
-        <td>Inspect pending uploads, verify genuine records, reject invalid files</td>
-        <td>Filter talent pool by CGPA and department, review verified dossiers</td>
-      </tr>
-      <tr>
-        <td><b>Primary Interfaces</b></td>
-        <td>Student Dashboard, Digital Locker, Certificates, Vault Key</td>
-        <td>Alumni Network, Profile Editor, Public Dossier</td>
-        <td>Committee Dashboard, Review Queue, In-App PDF Viewer</td>
-        <td>Placement Dashboard, Candidate Filter, Talent Pool Drawer</td>
-      </tr>
-      <tr>
-        <td><b>Authentication</b></td>
-        <td>Email + Password (JWT, role: STUDENT)</td>
-        <td>Email + Password (JWT, role: ALUMNI)</td>
-        <td>Email + Password (JWT, role: COMMITTEE)</td>
-        <td>Email + Password (JWT, role: PLACEMENT)</td>
-      </tr>
-    </table>
-
-    <h1 class="chapter-title" style="margin-top: 25px;">3. SYSTEM DESIGN</h1>
-
-    <p>This section presents the architectural and design models of EduVault: Object Diagram, Class Diagram, Use Case Diagram, Sequence Diagram, Activity Diagram, Module Hierarchy Diagram, UI Design, and Table Specifications.</p>
-
-    <h2 class="section-title">3.1 OBJECT DIAGRAM</h2>
-    <p class="no-indent">Figure 3.1 depicts a runtime snapshot of instantiated objects during an active verification session:</p>
-
-    <div class="wireframe-box">
-+-----------------------------------+               +--------------------------------------+
-|        akshayUser: User           |  owns         |    akshayProfile: StudentProfile     |
-| id: 14                            |-------------->| id: 7                                |
-| email: "ak12@gmail.com"           |               | prn: "1272250311"                    |
-| role: "STUDENT"                   |               | department: "Computer Science"       |
-| first_name: "Akshay"              |               | cgpa: 9.20                           |
-+-----------------------------------+               +--------------------------------------+
-                  |
-                  | uploads
-                  v
-+-----------------------------------+               +--------------------------------------+
-|        degreeDoc: Document        |<--------------|        committeeUser: User           |
-| id: 42                            |   verifies    | id: 3                                |
-| title: "Degree Certificate"       |               | email: "committee@mitwpu.edu.in"     |
-| category: "CERTIFICATE"           |               | role: "COMMITTEE"                    |
-| status: "VERIFIED"                |               +--------------------------------------+
-| verification_id: "f47ac10b..."    |
-+-----------------------------------+
-    </div>
-    <div class="figure-caption">Figure 3.1: Object diagram of runtime entities during academic verification.</div>
-
-    <div class="page-footer">Page 16</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 17: CLASS DIAGRAM
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">3.2 CLASS DIAGRAM</h2>
-    <p>The class diagram represents the structural architecture of the persistence and service models in EduVault:</p>
-
-    <div class="wireframe-box">
-+-----------------------------------------+                 +-----------------------------------------+
-|                  User                   | 1             1 |              StudentProfile             |
-+-----------------------------------------+---------------->+-----------------------------------------+
-| - id: int                               |                 | - id: int                               |
-| - email: EmailField                     |                 | - user_id: int                          |
-| - role: CharField (Enum)                |                 | - prn: CharField                        |
-| - college: CharField                    |                 | - roll_number: CharField                |
-| - department: CharField                 |                 | - cgpa: DecimalField                    |
-| - is_active: boolean                    |                 | - batch: CharField                      |
-| - date_joined: DateTime                 |                 | - skills: TextField                     |
-+-----------------------------------------+                 | - current_company: CharField            |
-| + check_password(raw_password): bool    |                 | - current_role: CharField               |
-| + get_full_name(): string               |                 | - is_mentor_available: boolean          |
-+-----------------------------------------+                 +-----------------------------------------+
-                     | 1
-                     |
-                     | *
-                     v
-+-----------------------------------------+
-|                Document                 |
-+-----------------------------------------+
-| - id: int                               |
-| - verification_id: UUIDField            |
-| - title: CharField                      |
-| - category: CharField (Enum)            |
-| - file: FileField                       |
-| - status: CharField (PENDING, VERIFIED) |
-| - rejection_reason: TextField           |
-| - verified_at: DateTime                 |
-| - created_at: DateTime                  |
-+-----------------------------------------+
-| + clean(): void                         |
-+-----------------------------------------+
-    </div>
-    <div class="figure-caption">Figure 3.2: Class diagram of the database models and entities.</div>
-
-    <div class="page-footer">Page 17</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 18: USE CASE & SEQUENCE DIAGRAMS
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">3.3 USE CASE DIAGRAM</h2>
-    <p>The Use Case Diagram defines interactions between primary actors and the EduVault system:</p>
-
-    <div class="wireframe-box">
-       (Student)                 (Committee)               (Placement Officer)           (Recruiter)
-           |                          |                             |                         |
-    +------+------+            +------+------+               +------+------+                  |
-    |             |            |             |               |             |                  |
-    v             v            v             v               v             v                  v
-[Upload Doc] [Share QR]   [Review Queue] [Verify Doc]    [Filter CGPA] [View Dossier]    [Scan QR Key]
-    </div>
-    <div class="figure-caption">Figure 3.3: Use case interaction model across actors.</div>
-
-    <h2 class="section-title">3.4 SEQUENCE DIAGRAM</h2>
-    <p>The sequence diagram illustrates the lifecycle of document upload, committee verification, and recruiter scanning:</p>
-
-    <div class="wireframe-box">
-Student              React Frontend            Django REST API           PostgreSQL           Recruiter
-   |                        |                         |                      |                    |
-   |-- 1. Selects File ---->|                         |                      |                    |
-   |-- 2. Click "Upload" -->|                         |                      |                    |
-   |                        |-- 3. POST multipart --->|                      |                    |
-   |                        |      (with JWT)         |-- 4. INSERT record ->|                    |
-   |                        |                         |      (status:PENDING)|                    |
-   |                        |                         |<- 5. Success 201 ----|                    |
-   |                        |<- 6. Render Pending ----|                      |                    |
-   |                                                                                              |
-   |               Committee Member Reviews Document                                              |
-   |                        |-- 7. GET pending list ->|                      |                    |
-   |                        |<- 8. Return queue ------|                      |                    |
-   |                        |-- 9. POST verify ------>|                      |                    |
-   |                        |                         |-- 10. UPDATE status->|                    |
-   |                        |<- 11. Status: VERIFIED -|       to 'VERIFIED'  |                    |
-   |                                                                                              |
-   |               Recruiter Scans Interview Key QR                                               |
-   |                        |                                                                     |
-   |                        |<==================== 12. Scans QR Code =============================|
-   |                        |-- 13. GET /public/student/14 ----------------->|                    |
-   |                        |<- 14. Return Authenticated Student Dossier ----|                    |
-   |                        |==================== 15. Displays Verified Profile ================>|
-    </div>
-    <div class="figure-caption">Figure 3.4: Sequence diagram of document upload, verification, and QR lookup.</div>
-
-    <div class="page-footer">Page 18</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 19: ACTIVITY & MODULE HIERARCHY
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">3.5 ACTIVITY DIAGRAM</h2>
-    <div class="wireframe-box">
-                    ( Start: Student Selects File )
-                                   |
-                                   v
-                    [ Validate Size <= 5MB & Extension ]
-                                   |
-                    +--------------+--------------+
-                    |                             |
-             [ Invalid ]                     [ Valid ]
-                    |                             |
-                    v                             v
-           ( Display Error )              [ Upload to API ]
-                    |                             |
-                    +<------- (Re-upload) <-------+
-                                                  |
-                                                  v
-                                     [ Save Status: PENDING ]
-                                                  |
-                                                  v
-                                     [ Committee Reviews File ]
-                                                  |
-                                   +--------------+--------------+
-                                   |                             |
-                              [ Approve ]                   [ Reject ]
-                                   |                             |
-                                   v                             v
-                       [ Set Status: VERIFIED ]      [ Set Status: REJECTED ]
-                       [ Record Timestamp ]          [ Save Feedback Reason ]
-                                   |                             |
-                                   v                             v
-                       [ Generate QR Key ]           [ Notify Student in UI ]
-                                   |                             |
-                                ( End ) <------------------------+
-    </div>
-    <div class="figure-caption">Figure 3.5: Activity diagram of the credential submission and review lifecycle.</div>
-
-    <h2 class="section-title">3.6 MODULE HIERARCHY DIAGRAM</h2>
-    <div class="wireframe-box">
-                                     +---------------------------+
-                                     |      EduVault System      |
-                                     +---------------------------+
-                                                   |
-         +-----------------+-----------------------+-----------------------+-----------------+
-         |                 |                       |                       |                 |
-         v                 v                       v                       v                 v
-+-----------------+ +-----------------+ +---------------------+ +---------------------+ +-----------------+
-| Authentication  | | Student Vault   | | Academic Committee  | | Placement Relations | | Alumni Network  |
-| - JWT Tokens    | | - Doc Upload    | | - Pending Queue     | | - Candidate Filter  | | - Search Engine |
-| - Role RBAC     | | - Portfolio     | | - In-App PDF View   | | - CGPA Thresholds   | | - Mentor Toggle |
-| - Profile Init  | | - QR Generator  | | - Verification Exec | | - Talent Analytics  | | - Dossier Links |
-+-----------------+ +-----------------+ +---------------------+ +---------------------+ +-----------------+
-    </div>
-    <div class="figure-caption">Figure 3.6: Top-down modular decomposition of EduVault platform.</div>
-
-    <div class="page-footer">Page 19</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 20: UI DESIGN & STATE DIAGRAM
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">3.7 USER INTERFACE DESIGN</h2>
-
-    <h3 class="subsection-title">3.7.1 UI Architecture Philosophy</h3>
-    <p>The interface is architected around a single persistent shell featuring a collapsible navigation sidebar and responsive content canvas. The design language utilizes a curated palette with vibrant indigo accents, slate neutral backgrounds, high-contrast typography, and intuitive micro-interactions.</p>
-
-    <div class="table-caption">Table 3.1: Design principles and implementation rationale.</div>
-    <table>
-      <tr>
-        <th style="width: 25%;">Principle</th>
-        <th style="width: 35%;">Design Decision</th>
-        <th style="width: 40%;">Rationale</th>
-      </tr>
-      <tr>
-        <td><b>Visual Hierarchy</b></td>
-        <td>Standardized color-coded badges: Amber (Pending), Emerald (Verified), Rose (Rejected).</td>
-        <td>Users instantly recognize credential status without reading fine print.</td>
-      </tr>
-      <tr>
-        <td><b>Frictionless Sharing</b></td>
-        <td>1-click Interview Key modal rendering responsive QR codes with one-touch link copying.</td>
-        <td>Enables rapid cross-device demonstration and mobile candidate verification in interview settings.</td>
-      </tr>
-      <tr>
-        <td><b>Responsive Adaptation</b></td>
-        <td>Mobile-first flexbox and grid layouts using Tailwind responsive breakpoints.</td>
-        <td>Seamlessly transitions from desktop multi-column tables to compact mobile card lists.</td>
-      </tr>
-    </table>
-
-    <h3 class="subsection-title">3.7.2 Navigation and State Diagram</h3>
-    <div class="wireframe-box">
-             [ /login ] -------- (Valid Credentials) --------> [ Role Evaluation ]
-                 ^                                                      |
-                 |                                      +---------------+---------------+
-                 |                                      |               |               |
-                 |                                      v               v               v
-                 |                                 [ STUDENT ]    [ COMMITTEE ]   [ PLACEMENT ]
-                 |                                      |               |               |
-                 |                                      v               v               v
-                 +--- (Logout / 401 Unauthorized) --- [ Vault ]     [ Queue ]      [ Talent ]
-    </div>
-    <div class="figure-caption">Figure 3.7: Navigation state diagram and role routing.</div>
-
-    <div class="page-footer">Page 20</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 21: SCREEN INVENTORY & TABLE SPECIFICATIONS
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h3 class="subsection-title">3.7.3 Screen Inventory</h3>
-    <div class="table-caption">Table 3.2: Complete screen inventory and route mapping.</div>
-    <table>
-      <tr>
-        <th>Screen Name</th>
-        <th>Route Path</th>
-        <th>Target Role</th>
-        <th>Key UI Components</th>
-      </tr>
-      <tr>
-        <td>Login &amp; Register</td>
-        <td><code>/login</code>, <code>/register</code></td>
-        <td>Public / All</td>
-        <td>Email field, password input with show toggle, role selector cards, submit button.</td>
-      </tr>
-      <tr>
-        <td>Student Dashboard</td>
-        <td><code>/dashboard</code></td>
-        <td>Student</td>
-        <td>KPI metric cards (Total Docs, Verified, Pending), recent activity feed, quick action buttons.</td>
-      </tr>
-      <tr>
-        <td>Certificates Vault</td>
-        <td><code>/certificates</code></td>
-        <td>Student</td>
-        <td>Drag-and-drop file uploader, category dropdown, document grid, "View File", "Share / QR".</td>
-      </tr>
-      <tr>
-        <td>Committee Queue</td>
-        <td><code>/committee/documents</code></td>
-        <td>Committee</td>
-        <td>Search input, status tabs (Pending, Verified, Rejected), in-app PDF preview modal, verify/reject actions.</td>
-      </tr>
-      <tr>
-        <td>Placement Talent Pool</td>
-        <td><code>/placement</code></td>
-        <td>Placement Team</td>
-        <td>Total student counter, eligible counter, department dropdown, CGPA threshold filter pills (&ge;8.0, &ge;7.5).</td>
-      </tr>
-      <tr>
-        <td>Alumni Directory</td>
-        <td><code>/alumni</code></td>
-        <td>All Users</td>
-        <td>Search bar, company pills, mentorship availability filter, alumni profile cards.</td>
-      </tr>
-      <tr>
-        <td>Public Candidate Dossier</td>
-        <td><code>/student/:id</code></td>
-        <td>Public / Recruiter</td>
-        <td>Student bio, verified CGPA badge, institutional seal, approved documents list with view links.</td>
-      </tr>
-      <tr>
-        <td>Certificate Verification</td>
-        <td><code>/verify/:id</code></td>
-        <td>Public / Recruiter</td>
-        <td>Cryptographic verification badge, issue date, issuer name, tamper-evident document details.</td>
-      </tr>
-    </table>
-
-    <h2 class="section-title">3.8 TABLE SPECIFICATIONS</h2>
-
-    <h3 class="subsection-title">3.8.1 Database Architecture Rationale</h3>
-    <p>EduVault uses PostgreSQL 16 hosted on Neon Serverless Cloud. The schema is normalized to Third Normal Form (3NF) to eliminate data redundancy. Foreign key constraints with <code>ON DELETE CASCADE</code> ensure referential integrity.</p>
-
-    <div class="page-footer">Page 21</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 22: DATA DICTIONARIES
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h3 class="subsection-title">3.8.2 Data Dictionaries</h3>
-
-    <div class="table-caption">Table 3.3: Data dictionary for accounts_user.</div>
-    <table>
-      <tr>
-        <th>Field Name</th>
-        <th>Data Type</th>
-        <th>Nullable</th>
-        <th>Key / Constraint</th>
-        <th>Description</th>
-      </tr>
-      <tr><td>id</td><td>BigSerial</td><td>No</td><td>Primary Key</td><td>Surrogate identifier of user account</td></tr>
-      <tr><td>email</td><td>VarChar(254)</td><td>No</td><td>Unique, Indexed</td><td>Institutional or personal login email</td></tr>
-      <tr><td>password</td><td>VarChar(128)</td><td>No</td><td>None</td><td>PBKDF2-SHA256 password hash</td></tr>
-      <tr><td>first_name</td><td>VarChar(150)</td><td>No</td><td>None</td><td>User's first name</td></tr>
-      <tr><td>last_name</td><td>VarChar(150)</td><td>No</td><td>None</td><td>User's last name</td></tr>
-      <tr><td>role</td><td>VarChar(20)</td><td>No</td><td>Default: STUDENT</td><td>Enum: STUDENT, ALUMNI, COMMITTEE, PLACEMENT</td></tr>
-      <tr><td>college</td><td>VarChar(255)</td><td>No</td><td>Default: MIT-WPU</td><td>Associated university / institute name</td></tr>
-      <tr><td>department</td><td>VarChar(100)</td><td>No</td><td>None</td><td>Enrolled academic department</td></tr>
-      <tr><td>is_active</td><td>Boolean</td><td>No</td><td>Default: True</td><td>Account active flag</td></tr>
-      <tr><td>date_joined</td><td>DateTime</td><td>No</td><td>Default: NOW</td><td>Timestamp of user registration</td></tr>
-    </table>
-
-    <div class="table-caption">Table 3.4: Data dictionary for students_studentprofile.</div>
-    <table>
-      <tr>
-        <th>Field Name</th>
-        <th>Data Type</th>
-        <th>Nullable</th>
-        <th>Key / Constraint</th>
-        <th>Description</th>
-      </tr>
-      <tr><td>id</td><td>BigSerial</td><td>No</td><td>Primary Key</td><td>Profile record ID</td></tr>
-      <tr><td>user_id</td><td>BigInt</td><td>No</td><td>FK &rarr; accounts_user.id (1:1)</td><td>Reference to owner user</td></tr>
-      <tr><td>prn</td><td>VarChar(50)</td><td>Yes</td><td>Indexed</td><td>Permanent Registration Number</td></tr>
-      <tr><td>cgpa</td><td>Decimal(4,2)</td><td>Yes</td><td>None</td><td>Cumulative Grade Point Average</td></tr>
-      <tr><td>batch</td><td>VarChar(50)</td><td>Yes</td><td>None</td><td>Academic graduation batch (e.g. 2024-2026)</td></tr>
-      <tr><td>skills</td><td>Text</td><td>Yes</td><td>None</td><td>Comma-separated technical competencies</td></tr>
-      <tr><td>current_company</td><td>VarChar(150)</td><td>Yes</td><td>None</td><td>Employer name (Alumni specific)</td></tr>
-      <tr><td>current_role</td><td>VarChar(150)</td><td>Yes</td><td>None</td><td>Job designation / title</td></tr>
-      <tr><td>is_mentor_available</td><td>Boolean</td><td>No</td><td>Default: False</td><td>Willingness to mentor current students</td></tr>
-    </table>
-
-    <div class="table-caption">Table 3.5: Data dictionary for documents_document.</div>
-    <table>
-      <tr>
-        <th>Field Name</th>
-        <th>Data Type</th>
-        <th>Nullable</th>
-        <th>Key / Constraint</th>
-        <th>Description</th>
-      </tr>
-      <tr><td>id</td><td>BigSerial</td><td>No</td><td>Primary Key</td><td>Internal document identifier</td></tr>
-      <tr><td>verification_id</td><td>UUID</td><td>No</td><td>Unique, Indexed</td><td>Cryptographic UUID for public verification lookup</td></tr>
-      <tr><td>user_id</td><td>BigInt</td><td>No</td><td>FK &rarr; accounts_user.id</td><td>Owner student reference</td></tr>
-      <tr><td>title</td><td>VarChar(200)</td><td>No</td><td>None</td><td>Document title (e.g., Semester III Marksheet)</td></tr>
-      <tr><td>category</td><td>VarChar(20)</td><td>No</td><td>Enum</td><td>CERTIFICATE, MARKSHEET, INTERNSHIP, PROJECT</td></tr>
-      <tr><td>file</td><td>VarChar(100)</td><td>No</td><td>None</td><td>Relative path in media/documents directory</td></tr>
-      <tr><td>status</td><td>VarChar(20)</td><td>No</td><td>Default: PENDING</td><td>Enum: PENDING, VERIFIED, REJECTED</td></tr>
-      <tr><td>rejection_reason</td><td>Text</td><td>Yes</td><td>None</td><td>Feedback provided by committee on rejection</td></tr>
-      <tr><td>verified_at</td><td>DateTime</td><td>Yes</td><td>None</td><td>Timestamp of committee verification approval</td></tr>
-    </table>
-
-    <div class="page-footer">Page 22</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 26: INPUT AND OUTPUT SCREENS
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h1 class="chapter-title">4. INPUT AND OUTPUT SCREENS</h1>
-
-    <h2 class="section-title">4.1 INPUT SCREENS</h2>
-
-    <h3 class="subsection-title">4.1.1 Authentication &amp; Login Screen (/login)</h3>
-    <p class="no-indent"><b>Purpose:</b> Authenticate existing users and issue signed JWT session tokens.</p>
-
-    <div class="wireframe-box">
-+----------------------------------------------------------------------------------------------------+
-|                                      EduVault: Secure Access Portal                                |
-+----------------------------------------------------------------------------------------------------+
-|                                  +------------------------------------+                            |
-|                                  |  [Lock Icon]  EduVault Sign In     |                            |
-|                                  |  Institutional Credential Vault    |                            |
-|                                  | ---------------------------------- |                            |
-|                                  |  Email Address                     |                            |
-|                                  |  +-------------------------------+ |                            |
-|                                  |  | ak12@gmail.com                | |                            |
-|                                  |  +-------------------------------+ |                            |
-|                                  |  Password                          |                            |
-|                                  |  +-------------------------+-----+ |                            |
-|                                  |  | ****************        |show | |                            |
-|                                  |  +-------------------------+-----+ |                            |
-|                                  |  +-------------------------------+ |                            |
-|                                  |  |        SIGN IN TO VAULT       | |                            |
-|                                  |  +-------------------------------+ |                            |
-|                                  |  Need an account? Register Here    |                            |
-|                                  +------------------------------------+                            |
-+----------------------------------------------------------------------------------------------------+
+    <h3>3.1 Object Diagram</h3>
+    <div class="diagram-box">
+[akshayUser: User]
+  - id: 14
+  - email: "ak12@gmail.com"
+  - role: "STUDENT"
+         |
+         | (owns)
+         v
+[akshayProfile: StudentProfile]
+  - prn: "1272250311"
+  - department: "Computer Science"
+  - cgpa: 9.20
+         |
+         | (uploads)
+         v
+[degreeDoc: Document] <-------- (verifies) -------- [committeeUser: User]
+  - id: 42                                           - id: 3
+  - title: "Degree Certificate"                      - role: "COMMITTEE"
+  - status: "VERIFIED"
+  - verification_id: "f47ac10b..."
     </div>
 
-    <h3 class="subsection-title">4.1.2 Document Upload &amp; Vault Locker (/certificates)</h3>
-    <p class="no-indent"><b>Purpose:</b> Allow students to upload marksheets and certificates with metadata classification.</p>
-
-    <div class="wireframe-box">
-+----------------------------------------------------------------------------------------------------+
-| [Sidebar] | DIGITAL CREDENTIAL VAULT                                                               |
-| Dashboard | +------------------------------------------------------------------------------------+ |
-| Locker    | | Upload Document                                                                    | |
-| Certs     | | Title: [ Sem III Marksheet ]   Category: [ MARKSHEET v ]                           | |
-| Key [QR]  | | +--------------------------------------------------------------------------------+ | |
-| Profile   | | | [Upload Cloud] Drag & drop PDF, JPG, or PNG (Max 5MB)                          | | |
-|           | | +--------------------------------------------------------------------------------+ | |
-|           | | [ UPLOAD AND SUBMIT TO COMMITTEE ]                                                 | |
-|           | +------------------------------------------------------------------------------------+ |
-|           | ACTIVE LOCKER CREDENTIALS                                                              |
-|           | +------------------------------------------------------------------------------------+ |
-|           | | Sem III Marksheet     [MARKSHEET]    [Status: VERIFIED]   [View File]  [Share / QR]| |
-|           | | Python Masterclass    [CERTIFICATE]  [Status: PENDING]    [View File]  [Delete]    | |
-|           | +------------------------------------------------------------------------------------+ |
-+----------------------------------------------------------------------------------------------------+
+    <h3>3.2 Class Diagram</h3>
+    <div class="diagram-box">
++------------------------+          1:1          +--------------------------+
+|         User           |---------------------->|      StudentProfile      |
++------------------------+                       +--------------------------+
+| - id: int              |                       | - id: int                |
+| - email: string        |                       | - prn: string            |
+| - role: string         |                       | - cgpa: float            |
+| - college: string      |                       | - batch: string          |
+| - department: string   |                       | - current_company: string|
++------------------------+                       +--------------------------+
+            | 1:*
+            |
+            v
++------------------------+
+|       Document         |
++------------------------+
+| - id: int              |
+| - verification_id: uuid|
+| - title: string        |
+| - category: string     |
+| - file: FileField      |
+| - status: string       |
+| - rejection_reason: str|
++------------------------+
     </div>
 
-    <div class="page-footer">Page 26</div>
-  </div>
+    <h3>3.3 Use Case Diagram</h3>
+    <p class="no-indent"><b>Primary Actors:</b> Student, Alumni, Committee Member, Placement Officer, Public Recruiter.<br/>
+    <b>Core Use Cases:</b> Register & Login, Manage Profile, Upload/Delete Documents, Generate Interview Key QR, Review Pending Queue, Verify/Reject Document, Filter Candidates by CGPA, Browse Alumni Network, Scan QR & Verify Dossier.</p>
 
-  <!-- ========================================================
-       PAGE 29: PLACEMENT & COMMITTEE SCREENS
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
+    <h3>3.4 Sequence Diagram (Document Verification & Recruitment Flow)</h3>
+    <div class="diagram-box">
+Student -> ReactUI: Uploads Degree Certificate (PDF)
+ReactUI -> DjangoAPI: POST /api/documents/ (multipart + JWT)
+DjangoAPI -> NeonDB: INSERT INTO documents (status="PENDING")
+DjangoAPI -> ReactUI: 201 Created (Badge: PENDING)
 
-    <h3 class="subsection-title">4.1.3 Placement Talent Search &amp; Eligibility Filter (/placement)</h3>
-    <p class="no-indent"><b>Purpose:</b> Allow corporate recruiters and placement officers to discover eligible students.</p>
+Committee -> ReactUI: Opens Verification Queue
+ReactUI -> DjangoAPI: GET /api/committee/documents/?status=PENDING
+Committee -> ReactUI: Clicks "Verify Document"
+ReactUI -> DjangoAPI: POST /api/committee/documents/{id}/verify/
+DjangoAPI -> NeonDB: UPDATE documents SET status="VERIFIED"
+DjangoAPI -> ReactUI: 200 OK (Badge: VERIFIED)
 
-    <div class="wireframe-box">
-+----------------------------------------------------------------------------------------------------+
-| PLACEMENT & CORPORATE RELATIONS TALENT ENGINE                                                      |
-| [Total Pool: 142]   [Drive Eligible: 98]   [Avg CGPA: 8.42]   [Verified Credentials: 89%]          |
-|----------------------------------------------------------------------------------------------------|
-| Search: [ Akshay...         ]   Department: [ Computer Science v ]   Min CGPA: [ >= 8.0 v ]         |
-| +---------------------+--------------+--------+---------------+--------------------+-------------+ |
-| | Candidate Name      | PRN          | CGPA   | Department    | Credentials Status | Dossier     | |
-| +---------------------+--------------+--------+---------------+--------------------+-------------+ |
-| | Akshay Darji        | 1272250311   | 9.20   | Comp Science  | [5 VERIFIED]       | [Open View] | |
-| | Priyesh Nandanwar   | 1272250279   | 8.85   | Comp Science  | [4 VERIFIED]       | [Open View] | |
-| +---------------------+--------------+--------+---------------+--------------------+-------------+ |
-+----------------------------------------------------------------------------------------------------+
+Recruiter -> PhoneCamera: Scans Student's Interview Key QR Code
+PhoneCamera -> ReactUI: Opens /student/14
+ReactUI -> DjangoAPI: GET /api/profile/public/student/14/
+DjangoAPI -> ReactUI: Returns Verified Dossier with Approved Documents
+ReactUI -> Recruiter: Displays Authenticated Candidate Credentials
     </div>
 
-    <h2 class="section-title">4.2 OUTPUT SCREENS</h2>
+    <h3>3.5 Activity Diagram</h3>
+    <p>User logs in &rarr; Selects document & category &rarr; Validates size & extension &rarr; Submits to Django REST API &rarr; Backend saves record with status <i>PENDING</i> &rarr; Document enters Committee Queue &rarr; Committee inspects file &rarr; If approved: status updated to <i>VERIFIED</i> with timestamp; If rejected: status updated to <i>REJECTED</i> with feedback dispatched to student &rarr; Verified documents compile into student's public Interview Key.</p>
 
-    <h3 class="subsection-title">4.2.1 Committee Verification Queue (/committee/documents)</h3>
-    <p class="no-indent"><b>Purpose:</b> Provide academic faculty with approval, rejection, and preview controls.</p>
+    <h3>3.6 Module Hierarchy Diagram</h3>
+    <p><b>EduVault Platform</b> decomposed into: (1) Authentication & RBAC Module, (2) Student Digital Vault Module, (3) Academic Committee Verification Module, (4) Placement Talent Pool Module, (5) Dynamic Alumni Directory Module, and (6) Public Verification Gateway.</p>
 
-    <div class="wireframe-box">
-+----------------------------------------------------------------------------------------------------+
-| ACADEMIC COMMITTEE VERIFICATION QUEUE                                    [Filter: PENDING v]       |
-| +---------------------+-----------------------+-------------+-------------+----------------------+ |
-| | Student Name        | Document Title        | Category    | Upload Date | Actions              | |
-| +---------------------+-----------------------+-------------+-------------+----------------------+ |
-| | Akshay Darji        | Sem III Marksheet     | MARKSHEET   | 27 Oct 2026 | [Preview] [Verify] [X| |
-| | Priyesh Nandanwar   | Cloud Computing Cert  | CERTIFICATE | 27 Oct 2026 | [Preview] [Verify] [X| |
-| +---------------------+-----------------------+-------------+-------------+----------------------+ |
-+----------------------------------------------------------------------------------------------------+
-    </div>
+    <h3>3.7 User Interface Design (Screens etc.)</h3>
+    <p>Consists of 8 responsive screens: User Login, User Registration, Student Digital Locker, Interview Key QR Modal, Academic Committee Review Queue, Campus Placement Talent Pool, Dynamic Alumni Directory, and Public Verified Candidate Dossier.</p>
 
-    <h3 class="subsection-title">4.2.2 Public Candidate Verification Dossier (/student/:id)</h3>
-    <p class="no-indent"><b>Purpose:</b> Recruiter-facing public verified portfolio opened via QR Code scan.</p>
+    <h3>3.8 Table Specifications</h3>
+    <p class="no-indent"><b>Table 1: accounts_user</b> &mdash; Columns: <code>id</code> (PK), <code>email</code> (Unique), <code>password</code> (Hash), <code>role</code> (STUDENT, ALUMNI, COMMITTEE, PLACEMENT), <code>college</code>, <code>department</code>, <code>is_active</code>, <code>date_joined</code>.</p>
+    <p class="no-indent"><b>Table 2: students_studentprofile</b> &mdash; Columns: <code>id</code> (PK), <code>user_id</code> (FK 1:1), <code>prn</code>, <code>cgpa</code>, <code>batch</code>, <code>skills</code>, <code>current_company</code>, <code>current_role</code>, <code>is_mentor_available</code>.</p>
+    <p class="no-indent"><b>Table 3: documents_document</b> &mdash; Columns: <code>id</code> (PK), <code>verification_id</code> (UUID), <code>user_id</code> (FK), <code>title</code>, <code>category</code>, <code>file</code>, <code>status</code> (PENDING, VERIFIED, REJECTED), <code>rejection_reason</code>, <code>verified_at</code>.</p>
 
-    <div class="wireframe-box">
-+----------------------------------------------------------------------------------------------------+
-| [MIT-WPU SEAL]  OFFICIAL INSTITUTIONAL VERIFICATION DOSSIER                                       |
-|                                                                                                    |
-| Candidate: Akshay Darji              PRN: 1272250311             Verified CGPA: [ 9.20 / 10.0 ]    |
-| Department: Computer Science         Batch: 2024-2026            Status: INSTITUTIONALLY VERIFIED  |
-| -------------------------------------------------------------------------------------------------- |
-| VERIFIED CREDENTIALS:                                                                              |
-|  [v] Degree Transcript - Verified by Committee (27 Oct 2026)                  [View Official File] |
-|  [v] AWS Certified Cloud Practitioner - Verified (15 Aug 2026)                [View Official File] |
-| -------------------------------------------------------------------------------------------------- |
-| TECHNICAL SHOWCASE:                                                                                |
-|  - EduVault: Decentralized Digital Locker Platform (Django, React, Vite, Postgres)                 |
-+----------------------------------------------------------------------------------------------------+
-    </div>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-    <div class="page-footer">Page 29</div>
-  </div>
+    <!-- 4. INPUT AND OUTPUT SCREENS -->
+    <h2>4. INPUT AND OUTPUT SCREENS</h2>
+    <p>Detailed documentation of all system screens, input fields, button interactions, visual indicators, and feedback messages across the 4 user portals.</p>
 
-  <!-- ========================================================
-       PAGE 37: TEST PROCEDURES AND IMPLEMENTATION
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-    <h1 class="chapter-title">5. TEST PROCEDURES AND IMPLEMENTATION</h1>
-
-    <h2 class="section-title">5.1 IMPLEMENTATION STRATEGY</h2>
-    <p>The system was built following a layered, test-driven approach. The data layer (PostgreSQL models and migrations) was implemented and verified first, followed by the API serializers and business logic layer, and finally the reactive React frontend.</p>
-
-    <h2 class="section-title">5.2 TEST STRATEGY AND TESTING ENVIRONMENT</h2>
-
-    <h3 class="subsection-title">5.2.1 Testing Levels</h3>
-    <div class="table-caption">Table 5.1: Testing levels and scope.</div>
-    <table>
-      <tr>
-        <th>Level</th>
-        <th>Target Module</th>
-        <th>Technique</th>
-        <th>Associated Test Cases</th>
-      </tr>
-      <tr>
-        <td><b>Unit Testing</b></td>
-        <td>Model validators, password hashing, file size limits</td>
-        <td>Direct function execution with boundary inputs</td>
-        <td>TC-01, TC-05, TC-06, TC-07</td>
-      </tr>
-      <tr>
-        <td><b>Integration Testing</b></td>
-        <td>Django REST API endpoints, JWT authentication</td>
-        <td>Automated HTTP client tests against test database</td>
-        <td>TC-02, TC-03, TC-04, TC-08</td>
-      </tr>
-      <tr>
-        <td><b>Workflow Testing</b></td>
-        <td>Committee approval &amp; rejection lifecycle</td>
-        <td>Simulated multi-role user state transitions</td>
-        <td>TC-09, TC-10, TC-11</td>
-      </tr>
-      <tr>
-        <td><b>Cross-Device Testing</b></td>
-        <td>Physical smartphone camera QR Code scanning</td>
-        <td>Mobile Safari &amp; Chrome QR camera resolution</td>
-        <td>TC-12, TC-13</td>
-      </tr>
-    </table>
-
-    <h3 class="subsection-title">5.2.2 Test Environment</h3>
-    <div class="table-caption">Table 5.2: Hardware and software test environment.</div>
-    <table>
-      <tr>
-        <th>Item</th>
-        <th>Specification</th>
-      </tr>
-      <tr><td>Operating Systems</td><td>Windows 11 64-bit &amp; Ubuntu Linux 22.04 LTS</td></tr>
-      <tr><td>Host Processor &amp; Memory</td><td>Intel Core i5-1135G7 @ 2.40 GHz, 16 GB DDR4 RAM</td></tr>
-      <tr><td>Backend Runtimes</td><td>Python 3.11, Django 6.0, Django REST Framework 3.16</td></tr>
-      <tr><td>Frontend Runtimes</td><td>Node.js v20.x, React 18, Vite 8</td></tr>
-      <tr><td>Database Engine</td><td>PostgreSQL 16 (Neon Serverless Cloud)</td></tr>
-      <tr><td>Mobile Test Devices</td><td>Samsung Galaxy S22 (Android 14), Apple iPhone 14 (iOS 17)</td></tr>
-    </table>
-
-    <div class="page-footer">Page 37</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 38: TEST CASES AND TEST RESULTS
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">5.3 TEST CASES AND TEST RESULTS</h2>
-    <div class="table-caption">Table 5.3: Test case matrix.</div>
+    <!-- 5. TEST PROCEDURES AND IMPLEMENTATION -->
+    <h2>5. TEST PROCEDURES AND IMPLEMENTATION</h2>
     <table>
       <tr>
         <th>Test ID</th>
-        <th>Module</th>
-        <th>Test Scenario</th>
-        <th>Test Input / Condition</th>
+        <th>Scenario</th>
+        <th>Input</th>
         <th>Expected Result</th>
-        <th>Actual Result</th>
         <th>Status</th>
       </tr>
-      <tr>
-        <td><b>TC-01</b></td>
-        <td>Auth</td>
-        <td>Valid User Registration</td>
-        <td>Name: "Akshay Darji", Email: "ak12@gmail.com", Role: STUDENT</td>
-        <td>User created, password hashed with PBKDF2-SHA256, HTTP 201</td>
-        <td>User record created, HTTP 201 Created</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-02</b></td>
-        <td>Auth</td>
-        <td>Duplicate Email Registration</td>
-        <td>Submit registration with email already in database</td>
-        <td>HTTP 400 Bad Request: "user with email already exists"</td>
-        <td>Returned HTTP 400 with duplicate email validation</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-03</b></td>
-        <td>Auth</td>
-        <td>Valid JWT Login</td>
-        <td>Valid email and correct password</td>
-        <td>HTTP 200 with signed Access and Refresh JWT tokens</td>
-        <td>Received tokens; user stored in localStorage</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-04</b></td>
-        <td>Auth</td>
-        <td>Invalid Password Rejection</td>
-        <td>Valid email with incorrect password</td>
-        <td>HTTP 401 Unauthorized: "No active account found"</td>
-        <td>Returned HTTP 401 Unauthorized</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-05</b></td>
-        <td>Documents</td>
-        <td>Valid PDF Document Upload</td>
-        <td>File: <code>marksheet.pdf</code> (1.8 MB), Category: MARKSHEET</td>
-        <td>HTTP 201 Created; status set to <code>PENDING</code></td>
-        <td>File saved, status PENDING, UUID generated</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-06</b></td>
-        <td>Documents</td>
-        <td>Oversized Upload Rejection</td>
-        <td>File: <code>portfolio.pdf</code> (8.4 MB &gt; 5 MB limit)</td>
-        <td>HTTP 400 Bad Request: "File size must not exceed 5 MB"</td>
-        <td>Rejected by validator with HTTP 400</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-07</b></td>
-        <td>Documents</td>
-        <td>Disallowed File Extension</td>
-        <td>File: <code>script.exe</code> or <code>archive.zip</code></td>
-        <td>HTTP 400: "Only PDF, JPG, JPEG, and PNG files allowed"</td>
-        <td>Rejected with format validation message</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-08</b></td>
-        <td>RBAC</td>
-        <td>Student Role Access Guard</td>
-        <td>Student JWT requesting <code>/api/committee/documents/</code></td>
-        <td>HTTP 403 Forbidden; client redirects to /dashboard</td>
-        <td>HTTP 403 Forbidden enforced by IsCommittee</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-09</b></td>
-        <td>Committee</td>
-        <td>Document Verification</td>
-        <td>Committee user clicks "Verify" on Document ID: 42</td>
-        <td>Status changes to <code>VERIFIED</code>; verified_at recorded</td>
-        <td>Document marked VERIFIED in database</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-10</b></td>
-        <td>Committee</td>
-        <td>Document Rejection</td>
-        <td>Committee inputs reason: "Blurry scan; seal missing"</td>
-        <td>Status changes to <code>REJECTED</code>; reason stored</td>
-        <td>Status REJECTED; reason shown on student UI</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-11</b></td>
-        <td>Placement</td>
-        <td>Candidate CGPA Filtering</td>
-        <td>Filter: CGPA &ge; 8.0, Department: Computer Science</td>
-        <td>Renders only candidates with CGPA &ge; 8.0</td>
-        <td>Table correctly filtered to eligible candidates</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-12</b></td>
-        <td>QR Key</td>
-        <td>Mobile QR Scan Lookup</td>
-        <td>Smartphone scans QR code from student certificates page</td>
-        <td>Mobile browser opens <code>/student/:id</code> dossier</td>
-        <td>Dossier loaded cleanly on phone screen</td>
-        <td><b>PASS</b></td>
-      </tr>
-      <tr>
-        <td><b>TC-13</b></td>
-        <td>Production</td>
-        <td>Media File Viewing Link</td>
-        <td>User clicks "View File" on cloud deployment</td>
-        <td>Browser resolves Render media URL and opens file</td>
-        <td>Document opens directly in new browser tab</td>
-        <td><b>PASS</b></td>
-      </tr>
+      <tr><td>TC-01</td><td>User Registration</td><td>Akshay Darji, ak12@gmail.com, STUDENT</td><td>User created, 201 Created</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-02</td><td>Duplicate Email Reg</td><td>ak12@gmail.com (duplicate)</td><td>HTTP 400 Bad Request</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-03</td><td>User Login</td><td>Valid Email & Password</td><td>Return JWT Access & Refresh</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-04</td><td>Document Upload Valid</td><td>marksheet.pdf (1.8 MB), MARKSHEET</td><td>Saved with status PENDING</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-05</td><td>Oversized Upload</td><td>file > 5 MB</td><td>HTTP 400 File size error</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-06</td><td>Role Access Guard</td><td>Student accessing Committee API</td><td>HTTP 403 Forbidden</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-07</td><td>Committee Approval</td><td>Document ID: 42 clicked Verify</td><td>Status updated to VERIFIED</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-08</td><td>Placement CGPA Filter</td><td>CGPA >= 8.0</td><td>Filtered candidate pool</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-09</td><td>Mobile QR Scan</td><td>Phone camera scans /student/14</td><td>Opens public dossier on phone</td><td><b>PASS</b></td></tr>
+      <tr><td>TC-10</td><td>Production Media View</td><td>Click "View File"</td><td>Opens file from Render backend</td><td><b>PASS</b></td></tr>
     </table>
 
-    <div class="page-footer">Page 38</div>
-  </div>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-  <!-- ========================================================
-       PAGE 40: DEFECTS FOUND AND RESOLVED
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">5.4 DEFECTS FOUND AND RESOLVED</h2>
-
-    <h3 class="subsection-title">5.4.1 Defect 1: Production Media File 404 Resolution via re_path &amp; serve</h3>
-    <div class="table-caption">Table 5.4: Defect record for DEF-01.</div>
-    <table>
-      <tr>
-        <th style="width: 25%;">Field</th>
-        <th style="width: 75%;">Detail</th>
-      </tr>
-      <tr><td><b>ID</b></td><td>DEF-01</td></tr>
-      <tr><td><b>Component</b></td><td><code>config/urls.py</code>, Django Media Routing</td></tr>
-      <tr><td><b>Severity</b></td><td>High. Uploaded student certificates returned 404 Not Found on cloud deployment.</td></tr>
-      <tr><td><b>Detected In</b></td><td>Production integration testing on Render and Vercel.</td></tr>
-      <tr><td><b>Status</b></td><td>Resolved.</td></tr>
-    </table>
-
-    <p><b>Symptom:</b> When students uploaded certificates and clicked "View File", the browser returned <i>"404: Not Found - The requested resource was not found on this server."</i></p>
-    <p><b>Root Cause:</b> By default, Django serves media files only when <code>settings.DEBUG = True</code> using <code>urlpatterns += static(settings.MEDIA_URL)</code>. On the production Render deployment, <code>DEBUG</code> was set to <code>False</code>, causing Django to disable the media routes entirely.</p>
-    <p><b>Resolution:</b> Updated <code>config/urls.py</code> to explicitly route media requests through <code>django.views.static.serve</code> using <code>re_path</code> across all environments:</p>
-
-    <pre>from django.urls import re_path
-from django.views.static import serve
-from django.conf import settings
-
-# Explicitly enable media file serving in production
-urlpatterns += [
-    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
-]</pre>
-
-    <h3 class="subsection-title">5.4.2 Defect 2: Monorepo Root Directory Build Configuration on Vercel</h3>
-    <div class="table-caption">Table 5.5: Defect record for DEF-02.</div>
-    <table>
-      <tr>
-        <th style="width: 25%;">Field</th>
-        <th style="width: 75%;">Detail</th>
-      </tr>
-      <tr><td><b>ID</b></td><td>DEF-02</td></tr>
-      <tr><td><b>Component</b></td><td>Vercel Deployment Pipeline, Root Directory Resolution</td></tr>
-      <tr><td><b>Severity</b></td><td>High. Vercel deployment failed on first build.</td></tr>
-      <tr><td><b>Detected In</b></td><td>Initial cloud deployment from GitHub repository.</td></tr>
-      <tr><td><b>Status</b></td><td>Resolved.</td></tr>
-    </table>
-
-    <p><b>Symptom:</b> The Vercel build failed with: <i>"No package.json found in root directory."</i></p>
-    <p><b>Root Cause:</b> The repository is structured as a monorepo containing both <code>eduvault-frontend/</code> and <code>eduvault-backned/</code>. Vercel's default working directory was set to <code>./</code> rather than the frontend folder.</p>
-    <p><b>Resolution:</b> Created root-level <code>package.json</code> and <code>vercel.json</code> files that instruct Vercel to install dependencies and execute the build within <code>eduvault-frontend/</code>, pointing the output directory directly to <code>eduvault-frontend/dist</code>.</p>
-
-    <div class="page-footer">Page 40</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 42: SAMPLE CODE
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h1 class="chapter-title">6. SAMPLE CODE</h1>
-
-    <h2 class="section-title">6.1 CUSTOM USER MODEL &amp; ROLE GOVERNANCE (accounts/models.py)</h2>
-    <pre>from django.contrib.auth.models import AbstractUser, BaseUserManager
-from django.db import models
-
-class UserManager(BaseUserManager):
-    def create_user(self, email, password=None, **extra_fields):
-        if not email:
-            raise ValueError("The Email field must be set")
-        email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-class User(AbstractUser):
+    <!-- 6. SAMPLE CODE -->
+    <h2>6. SAMPLE CODE</h2>
+    <p class="no-indent"><b>Custom User Model (`accounts/models.py`):</b></p>
+    <pre>class User(AbstractUser):
     class Role(models.TextChoices):
         STUDENT = "STUDENT", "Student"
         ALUMNI = "ALUMNI", "Alumni"
@@ -2327,263 +596,65 @@ class User(AbstractUser):
     role = models.CharField(max_length=20, choices=Role.choices, default=Role.STUDENT)
     college = models.CharField(max_length=255, default="MIT-WPU")
     department = models.CharField(max_length=100, default="Computer Science")
-    phone = models.CharField(max_length=20, blank=True, null=True)
-
-    objects = UserManager()
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["first_name", "last_name"]</pre>
 
-    <h2 class="section-title">6.2 DOCUMENT VALIDATION &amp; ENCRYPTION MODEL (documents/models.py)</h2>
-    <pre>import uuid
-from django.db import models
-from django.conf import settings
-from django.core.exceptions import ValidationError
-
-def validate_document_file(value):
-    max_size = 5 * 1024 * 1024  # 5 MB
-    if value.size > max_size:
-        raise ValidationError("File size must not exceed 5 MB.")
-    allowed_extensions = [".pdf", ".jpg", ".jpeg", ".png"]
-    if not any(value.name.lower().endswith(ext) for ext in allowed_extensions):
-        raise ValidationError("Only PDF, JPG, JPEG, and PNG files are allowed.")
-
-class Document(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="documents")
-    verification_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
-    title = models.CharField(max_length=200)
-    category = models.CharField(max_length=20)
-    file = models.FileField(upload_to="documents/", validators=[validate_document_file])
-    status = models.CharField(max_length=20, default="PENDING")
-    rejection_reason = models.TextField(blank=True, null=True)
-    verified_at = models.DateTimeField(blank=True, null=True)</pre>
-
-    <div class="page-footer">Page 42</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 46: COMMITTEE VERIFICATION & FRONTEND MEDIA HELPER
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h2 class="section-title">6.3 COMMITTEE VERIFICATION &amp; REJECTION VIEW (documents/views.py)</h2>
-    <pre>from django.utils import timezone
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from .models import Document
-from .permissions import IsCommittee
-
-class VerifyDocumentView(APIView):
+    <p class="no-indent"><b>Committee Verification API View (`documents/views.py`):</b></p>
+    <pre>class VerifyDocumentView(APIView):
     permission_classes = [IsCommittee]
 
     def post(self, request, pk):
-        try:
-            document = Document.objects.get(pk=pk)
-        except Document.DoesNotExist:
-            return Response({"error": "Document not found."}, status=status.HTTP_404_NOT_FOUND)
-
-        document.status = "VERIFIED"
+        document = get_object_or_404(Document, pk=pk)
+        document.status = Document.Status.VERIFIED
         document.verified_at = timezone.now()
         document.rejection_reason = None
         document.save()
-        return Response({"message": "Document verified successfully.", "verified_at": document.verified_at}, status=status.HTTP_200_OK)</pre>
+        return Response({"message": "Document verified successfully.", "status": "VERIFIED"})</pre>
 
-    <h2 class="section-title">6.4 DYNAMIC API MEDIA RESOLVER (src/api/apiClient.js)</h2>
-    <pre>export const API_BASE_URL =
-  typeof import.meta !== "undefined" && import.meta.env?.VITE_API_URL
-    ? import.meta.env.VITE_API_URL.replace(/\/$/, "")
-    : "";
+    <p class="no-indent"><b>Frontend Dynamic Media Resolver (`src/api/apiClient.js`):</b></p>
+    <pre>export const API_BASE_URL = typeof import.meta !== "undefined" && import.meta.env?.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace(/\/$/, "") : "";
 
-/**
- * Returns full absolute URL for uploaded media files.
- * In production on Vercel, ensures relative /media paths target the Render backend.
- */
 export const getMediaUrl = (url) => {
   if (!url) return "";
-  if (url.startsWith("http://") || url.startsWith("https://")) {
-    return url;
-  }
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
   const cleanPath = url.startsWith("/") ? url : `/${url}`;
   return `${API_BASE_URL}${cleanPath}`;
 };</pre>
 
-    <h3 class="subsection-title">Explanation of Implementation Mechanics</h3>
-    <p><b>Role-Based Permission Enforcement:</b> Permissions are checked at the REST API view level using custom DRF permission classes (<code>IsCommittee</code>, <code>IsPlacementOrCommittee</code>) which inspect the authenticated JWT claims. If an unauthorized role attempts access, Django immediately terminates the request with HTTP 403 Forbidden without database query overhead.</p>
-    <p><b>Stateless JWT Token Lifecycle:</b> User credentials are exchanged for HMAC-SHA256 signed tokens. The client stores tokens in browser memory and attaches the bearer token to the HTTP <code>Authorization</code> header for every subsequent API request.</p>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-    <div class="page-footer">Page 46</div>
-  </div>
+    <!-- 7. LIMITATIONS & 8. FUTURE SCOPE -->
+    <h2>7. LIMITATIONS</h2>
+    <p>1. Render free-tier cold starts (30-50s spin up after 15 min idle).<br/>
+    2. Ephemeral disk on free container restarts (persistent PostgreSQL, temporary media).<br/>
+    3. Manual committee verification without automated OCR verification.<br/>
+    4. Offline mode not currently available (requires active internet).</p>
 
-  <!-- ========================================================
-       PAGE 50: LIMITATIONS
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
+    <h2>8. FUTURE SCOPE</h2>
+    <p>1. Blockchain-anchored cryptographic certificate hashes on Ethereum / Polygon.<br/>
+    2. Integration with persistent AWS S3 or Cloudinary storage.<br/>
+    3. AI-powered OCR for automatic verification against university ERP databases.<br/>
+    4. Government DigiLocker and National Academic Depository (NAD) API integrations.<br/>
+    5. Native mobile applications built with React Native.</p>
 
-    <h1 class="chapter-title">7. LIMITATIONS</h1>
+    <hr style="margin: 30px 0; border: 0.5px solid #ccc;"/>
 
-    <h2 class="section-title">7.1 Render Free-Tier Spin-Down (Cold Starts)</h2>
-    <div class="table-caption">Table 7.1: Operational limitation on free cloud hosting.</div>
-    <table>
-      <tr>
-        <th style="width: 25%;">Aspect</th>
-        <th style="width: 75%;">Detail</th>
-      </tr>
-      <tr>
-        <td><b>Cause</b></td>
-        <td>Render's free tier spins down idle web service containers after 15 minutes of inactivity to preserve compute resources.</td>
-      </tr>
-      <tr>
-        <td><b>Symptom</b></td>
-        <td>The initial HTTP request sent after dormancy requires 30 to 50 seconds while the container initializes and launches Gunicorn.</td>
-      </tr>
-      <tr>
-        <td><b>Mitigation</b></td>
-        <td>In a commercial production environment, upgrading to Render Starter ($7/mo) or AWS Elastic Beanstalk provides 100% active uptime.</td>
-      </tr>
-    </table>
+    <!-- 9. CONCLUSION & 10. REFERENCES -->
+    <h2>9. CONCLUSION</h2>
+    <p>EduVault successfully modernizes academic credential handling, eliminates document fraud, simplifies administrative review, and bridges the gap between students, recruiters, and alumni. Built on Django REST Framework, React 18, Vite, and PostgreSQL, the platform is fully responsive, production-tested, and deployed on cloud infrastructure.</p>
 
-    <h2 class="section-title">7.2 Ephemeral Container Storage vs. Persistent RDBMS</h2>
-    <p>On Render free instances, the local container filesystem is ephemeral: while the PostgreSQL database on Neon is permanent, locally stored media files in <code>media/</code> reset if the container restarts. In enterprise production, media storage must be delegated to dedicated object stores (e.g. Amazon S3 or Cloudinary).</p>
-
-    <h2 class="section-title">7.3 Manual Committee Review Dependency</h2>
-    <p>Credential verification currently relies on authorized human faculty inspection. Automated AI-based OCR cross-referencing against university records is not yet incorporated.</p>
-
-    <h2 class="section-title">7.4 Operational and Evaluation Limits</h2>
-    <p>The system requires an active internet connection to execute authentication and verification. An offline Progressive Web App (PWA) cache mode is not currently enabled.</p>
-
-    <div class="page-footer">Page 50</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 52: FUTURE SCOPE
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h1 class="chapter-title">8. FUTURE SCOPE</h1>
-
-    <div class="table-caption">Table 8.1: Roadmap and future engineering enhancements.</div>
-    <table>
-      <tr>
-        <th>Feature Area</th>
-        <th>Proposal</th>
-        <th>Integration Mechanism</th>
-        <th>Value to Institution</th>
-      </tr>
-      <tr>
-        <td><b>Decentralized Blockchain Verification</b></td>
-        <td>Anchor SHA-256 cryptographic hashes of approved certificates onto Polygon or Ethereum smart contracts.</td>
-        <td>Web3.py library communicating with an institutional smart contract during committee verification.</td>
-        <td>Guarantees permanent, tamper-proof, decentralized credential verification independent of hosting uptime.</td>
-      </tr>
-      <tr>
-        <td><b>Persistent Object Storage</b></td>
-        <td>Delegate media uploads to Amazon S3 buckets or Cloudinary CDN.</td>
-        <td>Django-storages package configured with S3 bucket credentials and pre-signed access URLs.</td>
-        <td>Eliminates container disk storage limits and provides high-speed media delivery across global CDNs.</td>
-      </tr>
-      <tr>
-        <td><b>AI-Powered Automated OCR</b></td>
-        <td>Integrate Google Cloud Vision / Tesseract OCR to extract student PRN, names, and grades automatically.</td>
-        <td>Background processing task cross-referencing extracted OCR tokens against university registrar databases.</td>
-        <td>Automates 80% of routine marksheets, alerting committee members only to anomalies and discrepancies.</td>
-      </tr>
-      <tr>
-        <td><b>National Academic Depository (NAD) Integration</b></td>
-        <td>Interface with the Government of India's National Academic Depository (NAD) and DigiLocker APIs.</td>
-        <td>OAuth2 integration permitting direct import of officially verified DigiLocker graduation transcripts.</td>
-        <td>Full compliance with national digital education standards and instant credential onboarding.</td>
-      </tr>
-    </table>
-
-    <div class="page-footer">Page 52</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 54: CONCLUSION & REFLECTION
-  ======================================================== -->
-  <div class="page page-break">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h1 class="chapter-title">9. CONCLUSION</h1>
-
-    <h2 class="section-title">9.1 Technical Summary</h2>
-    <p>The <b>EduVault: Digital Locker and Academic Credential Verification Platform</b> successfully modernizes academic record keeping, eradicates credential fraud, streamlines campus placement operations, and fosters dynamic alumni relations. By architecting a robust, decoupled full-stack platform utilizing <b>Django REST Framework, React 18, Vite, Tailwind CSS, and Neon Serverless PostgreSQL</b>, the system establishes a secure, single source of institutional truth.</p>
-    <p>The platform delivers instant physical-to-digital validation through dynamic <b>Interview Key QR Codes</b>, provides dedicated role governance for students, alumni, faculty, and recruiters, and operates seamlessly on zero-cost cloud infrastructure (Vercel and Render). EduVault demonstrates that institutional operations can be made transparent, instantaneous, and accessible worldwide.</p>
-
-    <h2 class="section-title">9.2 Academic and Professional Reflection</h2>
-    <div class="table-caption">Table 9.1: Technical competencies developed during project implementation.</div>
-    <table>
-      <tr>
-        <th>Competency Area</th>
-        <th>Where It Was Exercised</th>
-        <th>Key Learning &amp; Engineering Insight</th>
-      </tr>
-      <tr>
-        <td><b>Full-Stack System Architecture</b></td>
-        <td>Designing decoupled REST contract between React SPA and Django backend.</td>
-        <td>Separating presentation from persistence; managing client build pipelines with Vite and Rollup.</td>
-      </tr>
-      <tr>
-        <td><b>Security &amp; Role-Based Governance</b></td>
-        <td>SimpleJWT token lifecycle, custom DRF permissions (<code>IsCommittee</code>, <code>IsPlacement</code>).</td>
-        <td>Defense-in-depth principles: never relying on frontend route guards alone; enforcing role checks at every API layer.</td>
-      </tr>
-      <tr>
-        <td><b>Relational Database Modeling</b></td>
-        <td>PostgreSQL schema design, Third Normal Form (3NF), cascade constraints.</td>
-        <td>Maintaining data integrity and high query throughput across user, document, and profile entities.</td>
-      </tr>
-      <tr>
-        <td><b>Production Cloud Deployment</b></td>
-        <td>Deploying monorepo across Vercel (frontend) and Render (WSGI Gunicorn + WhiteNoise).</td>
-        <td>Configuring 12-factor cloud apps, resolving CORS origins, and setting dynamic media routing rules.</td>
-      </tr>
-    </table>
-
-    <div class="page-footer">Page 54</div>
-  </div>
-
-  <!-- ========================================================
-       PAGE 55: REFERENCES
-  ======================================================== -->
-  <div class="page">
-    <div class="page-header">EduVault: Digital Locker | Mini Project Report</div>
-
-    <h1 class="chapter-title">10. REFERENCES</h1>
-
-    <h3 class="subsection-title">A. Software Architecture &amp; System Design</h3>
+    <h2>10. REFERENCES</h2>
     <ol style="padding-left: 20px;">
-      <li>Martin Kleppmann, <i>Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems</i>, O'Reilly Media, 2017.</li>
-      <li>Robert C. Martin, <i>Clean Architecture: A Craftsman's Guide to Software Structure and Design</i>, Prentice Hall, 2017.</li>
-      <li>Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, <i>Design Patterns: Elements of Reusable Object-Oriented Software</i>, Addison-Wesley, 1994.</li>
+      <li>Daniel Roy Greenfeld & Audrey Roy Greenfeld, <i>Two Scoops of Django 3.x</i>.</li>
+      <li>Alex Banks & Eve Porcello, <i>Learning React (2nd Edition)</i>, O'Reilly Media.</li>
+      <li>Django Software Foundation, <i>Django 6.0 Documentation</i>, 2026.</li>
+      <li>Django REST Framework Official Guide, <i>https://www.django-rest-framework.org/</i>.</li>
+      <li>React.js Documentation, <i>https://react.dev/</i>.</li>
+      <li>Vite Documentation, <i>https://vite.dev/</i>.</li>
+      <li>Tailwind CSS Guide, <i>https://tailwindcss.com/docs</i>.</li>
+      <li>PostgreSQL Global Development Group, <i>PostgreSQL 16 Manual</i>, 2026.</li>
     </ol>
-
-    <h3 class="subsection-title">B. Backend &amp; API Engineering</h3>
-    <ol style="padding-left: 20px;">
-      <li>Daniel Roy Greenfeld &amp; Audrey Roy Greenfeld, <i>Two Scoops of Django 3.x: Best Practices for the Django Web Framework</i>, Two Scoops Press, 2020.</li>
-      <li>Django Software Foundation, <i>Django 6.0 Documentation</i>, 2026. URL: <a href="https://docs.djangoproject.com/en/6.0/">https://docs.djangoproject.com/en/6.0/</a></li>
-      <li>Tom Christie et al., <i>Django REST Framework Documentation</i>, 2026. URL: <a href="https://www.django-rest-framework.org/">https://www.django-rest-framework.org/</a></li>
-    </ol>
-
-    <h3 class="subsection-title">C. Frontend &amp; Web Standards</h3>
-    <ol style="padding-left: 20px;">
-      <li>Alex Banks &amp; Eve Porcello, <i>Learning React: Modern Patterns for Developing React Apps (2nd Edition)</i>, O'Reilly Media, 2020.</li>
-      <li>React Core Team, <i>React 18 Documentation &amp; Architecture Guides</i>, 2024. URL: <a href="https://react.dev/">https://react.dev/</a></li>
-      <li>Evan You &amp; Vite Contributors, <i>Vite: Next Generation Frontend Tooling</i>, 2026. URL: <a href="https://vite.dev/">https://vite.dev/</a></li>
-      <li>Adam Wathan et al., <i>Tailwind CSS Documentation</i>, 2026. URL: <a href="https://tailwindcss.com/docs">https://tailwindcss.com/docs</a></li>
-    </ol>
-
-    <h3 class="subsection-title">D. Security &amp; Identity Standards</h3>
-    <ol style="padding-left: 20px;">
-      <li>National Institute of Standards and Technology (NIST), <i>Digital Identity Guidelines: Authentication and Lifecycle Management (SP 800-63B)</i>, 2017.</li>
-      <li>Michael B. Jones, John Bradley, and Nat Sakimura, <i>JSON Web Token (JWT) Standards (RFC 7519)</i>, Internet Engineering Task Force (IETF), 2015.</li>
-      <li>OWASP Foundation, <i>OWASP Top 10 Web Application Security Risks</i>, 2021. URL: <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a></li>
-    </ol>
-
-    <div class="page-footer">Page 55</div>
   </div>
 
 </body>
